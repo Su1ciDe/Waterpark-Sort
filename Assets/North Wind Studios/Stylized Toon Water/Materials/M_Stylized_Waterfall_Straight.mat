@@ -37,8 +37,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Animation_Intensity: 0
+    - _Animation_Speed: 0
     m_Colors:
-    - _Foam_Scale: {r: 1, g: 0.1, b: 0, a: 0}
+    - _Foam_Scale: {r: 1, g: 0.3, b: 0, a: 0}
     - _Foam_Speed: {r: 0, g: 0.05, b: 0, a: 0}
   m_BuildTextureStacks: []

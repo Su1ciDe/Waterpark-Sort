@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61f4db92c801674697719da35a45184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorsSO: {fileID: 11400000, guid: 20ae622872f0a47638e68f3435cf9951, type: 2}
+  prefabsSO: {fileID: 11400000, guid: e901cda2ef8ce4b0aa8e36571d6f8727, type: 2}
 --- !u!114 &1554739255217567303
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac180b68d9040d8a9fa88a5a135ee83, type: 3}
+  m_Name: Prefabs
+  m_EditorClassIdentifier: 
+  CanoePrefabs:
+    _serializedList:
+    - Key: 4
+      Value: {fileID: 4181673344761899836, guid: 9dfd6f518ed5a42439f8d24f47e088a4, type: 3}
+    - Key: 6
+      Value: {fileID: 5494866970133928768, guid: df6293c5a1d1643caa3014db069609fa, type: 3}
+    - Key: 8
+      Value: {fileID: 1117013986583334372, guid: 05a1b93eb70dd4e49ae5c9bd264ad4a4, type: 3}
+  PersonPrefab: {fileID: 8510150894733150309, guid: 385ce6833d2594ecb916c67ff59dfb59, type: 3}
