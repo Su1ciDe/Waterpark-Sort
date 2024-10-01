@@ -6,6 +6,22 @@ namespace GamePlay.Canoes
 	{
 		public Person CurrentPerson { get; private set; }
 
+		public void SetPerson(Person person, bool setPosition = false)
+		{
+			CurrentPerson = person;
+			CurrentPerson.transform.SetParent(transform, !setPosition);
+			// if (setPosition)
+			// {
+			// 	setPosition
+			// }
+		}
+
+		public void SetPersonPosition()
+		{
+			CurrentPerson.transform.localPosition = Vector3.zero;
+			CurrentPerson.transform.localRotation = Quaternion.identity;
+		}
+
 #if UNITY_EDITOR
 		private void OnDrawGizmos()
 		{

@@ -113,7 +113,7 @@ namespace Fiber.Managers
 			CurrentLevel.Load(CurrentLevelData);
 			OnLevelLoad?.Invoke();
 
-			StartLevel();
+			// StartLevel();
 		}
 
 		public void StartLevel()

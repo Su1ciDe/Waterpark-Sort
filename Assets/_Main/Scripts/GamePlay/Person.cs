@@ -21,15 +21,19 @@ namespace GamePlay
 		[Title("References")]
 		[SerializeField] private Renderer[] renderers;
 
+		[Title("Parameters")]
+		[SerializeField] private float jumpDuration = .5f;
+
 		private const float HIGHLIGHT_DURATION = .25f;
 		private const float HIGHLIGHT_SCALE = 1.25f;
 
 		public static event UnityAction<Person> OnPersonTapped;
 
-		public void Setup(ColorType colorType)
+		public void Setup(ColorType colorType, CanoeSlot canoeSlot)
 		{
 			ColorType = colorType;
 
+			CurrentSlot = canoeSlot;
 			ChangeMaterial(GameManager.Instance.ColorsSO.PeopleMaterials[ColorType]);
 		}
 
@@ -41,6 +45,11 @@ namespace GamePlay
 				tempMats[0] = material;
 				renderers[i].materials = tempMats;
 			}
+		}
+
+		public Tween Jump()
+		{
+			return transform.DOLocalJump(Vector3.zero, 1, 1, jumpDuration);
 		}
 
 		#region Inputs

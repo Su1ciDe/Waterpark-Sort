@@ -225,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5154500142966247085, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5154500142966247085, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_LocalRotation.x
@@ -233,7 +233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5154500142966247085, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5154500142966247085, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_LocalRotation.z
@@ -245,11 +245,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5154500142966247085, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5154500142966247085, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: renderers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: <Size>k__BackingField.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: <Size>k__BackingField.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: renderers.Array.data[0]
+      value: 
+      objectReference: {fileID: 5565498027121314740}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: renderers.Array.data[1]
+      value: 
+      objectReference: {fileID: 6279861886885063064}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[0]
+      value: 
+      objectReference: {fileID: 7834147627113806581}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[1]
+      value: 
+      objectReference: {fileID: 6947330791061319134}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[2]
+      value: 
+      objectReference: {fileID: 1041317858695590587}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[3]
+      value: 
+      objectReference: {fileID: 395639038757442225}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[4]
+      value: 
+      objectReference: {fileID: 9074199201879034805}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[5]
+      value: 
+      objectReference: {fileID: 6586477436498018642}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: <CanoeType>k__BackingField
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -275,10 +327,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3032764070499676619, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8907758437609966626}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4645384751253450613, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5494866970133928768}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
 --- !u!4 &983008450133732351 stripped
 Transform:
@@ -290,35 +339,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3032764070499676619, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
   m_PrefabInstance: {fileID: 41031540644839568}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4676562880865464293 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4645384751253450613, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
-  m_PrefabInstance: {fileID: 41031540644839568}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5494866970133928768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4676562880865464293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd675585163d41759533c69f60ec2653, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <CanoeType>k__BackingField: 6
-  <Size>k__BackingField: {x: 2.5, y: 4}
-  canoeSlots:
-  - {fileID: 7834147627113806581}
-  - {fileID: 6947330791061319134}
-  - {fileID: 1041317858695590587}
-  - {fileID: 395639038757442225}
-  - {fileID: 9074199201879034805}
-  - {fileID: 6586477436498018642}
-  renderers:
-  - {fileID: 5565498027121314740}
-  - {fileID: 6279861886885063064}
 --- !u!1001 &102650768061106611
 PrefabInstance:
   m_ObjectHideFlags: 0

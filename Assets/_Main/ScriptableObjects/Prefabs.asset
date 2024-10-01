@@ -15,9 +15,9 @@ MonoBehaviour:
   CanoePrefabs:
     _serializedList:
     - Key: 4
-      Value: {fileID: 4181673344761899836, guid: 9dfd6f518ed5a42439f8d24f47e088a4, type: 3}
+      Value: {fileID: 6999041470919390990, guid: 9dfd6f518ed5a42439f8d24f47e088a4, type: 3}
     - Key: 6
-      Value: {fileID: 5494866970133928768, guid: df6293c5a1d1643caa3014db069609fa, type: 3}
+      Value: {fileID: 6670451405857912514, guid: df6293c5a1d1643caa3014db069609fa, type: 3}
     - Key: 8
-      Value: {fileID: 1117013986583334372, guid: 05a1b93eb70dd4e49ae5c9bd264ad4a4, type: 3}
+      Value: {fileID: 3634097663615798439, guid: 05a1b93eb70dd4e49ae5c9bd264ad4a4, type: 3}
   PersonPrefab: {fileID: 8510150894733150309, guid: 385ce6833d2594ecb916c67ff59dfb59, type: 3}

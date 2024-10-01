@@ -49,7 +49,6 @@ MonoBehaviour:
   holders:
   - {fileID: 8907876800318462344}
   - {fileID: 3800735575896974240}
-  spawningCanoes: []
 --- !u!1001 &2877611770285929224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72,7 +71,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3870212739154015512, guid: b5ab4c8ea2a6c40919a3f5484bb8fa55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: 23.5
       objectReference: {fileID: 0}
     - target: {fileID: 3870212739154015512, guid: b5ab4c8ea2a6c40919a3f5484bb8fa55, type: 3}
       propertyPath: m_LocalRotation.w
@@ -145,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3870212739154015512, guid: b5ab4c8ea2a6c40919a3f5484bb8fa55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: 23.5
       objectReference: {fileID: 0}
     - target: {fileID: 3870212739154015512, guid: b5ab4c8ea2a6c40919a3f5484bb8fa55, type: 3}
       propertyPath: m_LocalRotation.w

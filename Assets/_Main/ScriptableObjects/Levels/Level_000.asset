@@ -12,5 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce11574ed48049fea3bdfef3b65bd78c, type: 3}
   m_Name: Level_000
   m_EditorClassIdentifier: 
+  MoveCount: 0
   PersonInTheHolder: 0
-  SpawningCanoes: []
+  SpawningCanoes:
+  - CanoeType: 6
+    CanoeColor: 0
+    PeopleColors: 010000000100000000000000000000000100000000000000
+  - CanoeType: 4
+    CanoeColor: 1
+    PeopleColors: 00000000010000000100000001000000
+  - CanoeType: 4
+    CanoeColor: 0
+    PeopleColors: 00000000010000000000000000000000
+  randomCanoeCount: 3
+  randomCanoeTypes:
+  - CanoeType: 4
+    Weight: 1
+    Percent: 50.00%
+  - CanoeType: 6
+    Weight: 1
+    Percent: 50.00%
+  randomCanoeColors:
+  - Color: 0
+    Weight: 1
+    Percent: 50.00%
+  - Color: 1
+    Weight: 1
+    Percent: 50.00%
+  randomPeople:
+  - Color: 0
+    Weight: 1
+    Percent: 50.00%
+  - Color: 1
+    Weight: 1
+    Percent: 50.00%

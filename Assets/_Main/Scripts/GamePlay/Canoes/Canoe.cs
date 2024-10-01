@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using Fiber.Managers;
 using TriInspector;
 using UnityEngine;
+using UnityEngine.Events;
 using Utilities;
 
 namespace GamePlay.Canoes
@@ -17,12 +19,26 @@ namespace GamePlay.Canoes
 		[Title("References")]
 		[SerializeField] private CanoeSlot[] canoeSlots;
 		[SerializeField] private Renderer[] renderers;
+		[SerializeField] private Transform model;
+
+		[Title("Parameters")]
+		[SerializeField] private float speed = 10;
+
+		public event UnityAction<Canoe> OnLeave;
+		public static event UnityAction<Canoe> OnLeaveAny;
 
 		public void Setup(ColorType colorType, List<ColorType> peopleColors)
 		{
 			ColorType = colorType;
 
 			ChangeMaterial(GameManager.Instance.ColorsSO.CanoeMaterials[ColorType]);
+
+			for (var i = 0; i < canoeSlots.Length; i++)
+			{
+				var person = Instantiate(GameManager.Instance.PrefabsSO.PersonPrefab, canoeSlots[i].transform);
+				person.Setup(peopleColors[i], canoeSlots[i]);
+				canoeSlots[i].SetPerson(person);
+			}
 		}
 
 		private void ChangeMaterial(Material material)
@@ -33,6 +49,23 @@ namespace GamePlay.Canoes
 				tempMats[0] = material;
 				renderers[i].materials = tempMats;
 			}
+		}
+
+		public void Leave()
+		{
+			// 
+			OnLeave?.Invoke(this);
+			OnLeaveAny?.Invoke(this);
+		}
+
+		public Tween Move(Vector3 position)
+		{
+			return transform.DOMove(position, speed).SetEase(Ease.OutSine).SetSpeedBased(true).SetEase(Ease.Linear).OnComplete(OnStoppedMoving);
+		}
+
+		private void OnStoppedMoving()
+		{
+			model.DOLocalRotate(new Vector3(20f, 0, 0), 0.1f).SetEase(Ease.InOutSine).SetRelative().SetLoops(2, LoopType.Yoyo);
 		}
 	}
 }

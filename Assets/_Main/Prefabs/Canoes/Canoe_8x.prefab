@@ -663,7 +663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5154500142966247085, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5154500142966247085, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_LocalRotation.x
@@ -671,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5154500142966247085, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5154500142966247085, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_LocalRotation.z
@@ -683,11 +683,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5154500142966247085, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5154500142966247085, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: renderers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: <Size>k__BackingField.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: <Size>k__BackingField.y
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: renderers.Array.data[0]
+      value: 
+      objectReference: {fileID: 5112341727874639371}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: renderers.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800482228612048606}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[0]
+      value: 
+      objectReference: {fileID: 8388768143971193432}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[1]
+      value: 
+      objectReference: {fileID: 318190884994695054}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[2]
+      value: 
+      objectReference: {fileID: 5649071695725393089}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[3]
+      value: 
+      objectReference: {fileID: 4772530130863752217}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[4]
+      value: 
+      objectReference: {fileID: 4059820752245879040}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[5]
+      value: 
+      objectReference: {fileID: 2839027833010614845}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[6]
+      value: 
+      objectReference: {fileID: 6249184792288365842}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: canoeSlots.Array.data[7]
+      value: 
+      objectReference: {fileID: 8504885799645594548}
+    - target: {fileID: 6630408944778180178, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: <CanoeType>k__BackingField
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -719,42 +779,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3032764070499676619, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6268454176314871492}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4645384751253450613, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1117013986583334372}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
---- !u!1 &3322145306204476800 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4645384751253450613, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
-  m_PrefabInstance: {fileID: 7957044000969915125}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1117013986583334372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3322145306204476800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd675585163d41759533c69f60ec2653, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <CanoeType>k__BackingField: 8
-  <Size>k__BackingField: {x: 2.5, y: 5.5}
-  canoeSlots:
-  - {fileID: 8388768143971193432}
-  - {fileID: 318190884994695054}
-  - {fileID: 5649071695725393089}
-  - {fileID: 4772530130863752217}
-  - {fileID: 4059820752245879040}
-  - {fileID: 2839027833010614845}
-  - {fileID: 6249184792288365842}
-  - {fileID: 8504885799645594548}
-  renderers:
-  - {fileID: 5112341727874639371}
-  - {fileID: 2800482228612048606}
 --- !u!4 &4934700023775857470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3032764070499676619, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
