@@ -47,8 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CanoeType>k__BackingField: 0
   <Size>k__BackingField: {x: 0, y: 0}
+  <ColorType>k__BackingField: 0
   canoeSlots: []
   renderers: []
+  model: {fileID: 951839528943135599}
   speed: 15
 --- !u!1 &9077162597115840071
 GameObject:

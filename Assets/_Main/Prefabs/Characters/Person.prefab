@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7893874568039125427}
   - component: {fileID: 3887629088905460816}
   - component: {fileID: 487502499219232338}
-  - component: {fileID: 421361606021110578}
   m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
@@ -84,29 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &421361606021110578
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164059400379916238}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6255339960900528360
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3843441313446660044}
   - component: {fileID: 1414681141989197685}
+  - component: {fileID: 6138124623326261341}
   - component: {fileID: 8510150894733150309}
   m_Layer: 7
   m_Name: Person
@@ -168,6 +145,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &6138124623326261341
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6255339960900528360}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &8510150894733150309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +182,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderers:
   - {fileID: 487502499219232338}
+  jumpDuration: 0.5
+  jumpHeight: 3
 --- !u!1 &7633612792309600886
 GameObject:
   m_ObjectHideFlags: 0

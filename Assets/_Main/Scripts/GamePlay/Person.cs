@@ -15,6 +15,7 @@ namespace GamePlay
 		public static Person SelectedPerson;
 
 		public bool IsMoving { get; set; }
+		public bool CanInteract { get; set; }
 		public CanoeSlot CurrentSlot { get; private set; }
 		public ColorType ColorType { get; private set; }
 
@@ -23,11 +24,30 @@ namespace GamePlay
 
 		[Title("Parameters")]
 		[SerializeField] private float jumpDuration = .5f;
+		[SerializeField] private float jumpHeight = 1;
 
-		private const float HIGHLIGHT_DURATION = .25f;
-		private const float HIGHLIGHT_SCALE = 1.25f;
+		private const float HIGHLIGHT_DURATION = .2f;
+		private const float HIGHLIGHT_SCALE = 1.2f;
 
 		public static event UnityAction<Person> OnPersonTapped;
+
+		private void OnEnable()
+		{
+			LevelManager.OnLevelStart += OnLevelStarted;
+		}
+
+		private void OnDisable()
+		{
+			LevelManager.OnLevelStart -= OnLevelStarted;
+		}
+
+		private void OnLevelStarted()
+		{
+			if (CurrentSlot)
+			{
+				SetInteractable(true);
+			}
+		}
 
 		public void Setup(ColorType colorType, CanoeSlot canoeSlot)
 		{
@@ -47,9 +67,52 @@ namespace GamePlay
 			}
 		}
 
+		public void Swap()
+		{
+			Player.Player.Instance.CanInput = false;
+
+			var personInHolder = Holder.Instance.CurrentPerson;
+			Holder.Instance.SetPerson(this);
+			CurrentSlot.SetPerson(personInHolder);
+			personInHolder.CurrentSlot = CurrentSlot;
+
+			SetInteractable(false);
+			personInHolder.SetInteractable(true);
+
+			Jump();
+			personInHolder.Jump().onComplete += () =>
+			{
+				Player.Player.Instance.CanInput = true;
+				OnJumpedToCanoe();
+
+				if (personInHolder.CurrentSlot.Canoe.IsCompleted)
+				{
+					personInHolder.SetInteractable(false);
+				}
+			};
+
+			CurrentSlot = null;
+		}
+
 		public Tween Jump()
 		{
-			return transform.DOLocalJump(Vector3.zero, 1, 1, jumpDuration);
+			IsMoving = true;
+			return transform.DOLocalJump(Vector3.zero, jumpHeight, 1, jumpDuration).OnComplete(() => IsMoving = false);
+		}
+
+		public Tween JumpTo(Vector3 position)
+		{
+			IsMoving = true;
+			return transform.DOJump(position, jumpHeight, 1, jumpDuration).OnComplete(() => IsMoving = false);
+		}
+
+		private void OnJumpedToCanoe()
+		{
+		}
+
+		public void SetInteractable(bool isInteractable)
+		{
+			CanInteract = isInteractable;
 		}
 
 		#region Inputs
@@ -61,6 +124,7 @@ namespace GamePlay
 
 			LevelManager.Instance.CurrentLevel.TotalMoveCount++;
 
+			Swap();
 			OnPersonTapped?.Invoke(this);
 
 			HapticManager.Instance.PlayHaptic(HapticPatterns.PresetType.RigidImpact);
@@ -69,6 +133,7 @@ namespace GamePlay
 		public void OnPointerDown(PointerEventData eventData)
 		{
 			if (!Player.Player.Instance.CanInput) return;
+			if (!CanInteract) return;
 			if (IsMoving) return;
 
 			SelectedPerson = this;
@@ -80,6 +145,7 @@ namespace GamePlay
 		{
 			if (!Player.Player.Instance.CanInput) return;
 			if (!SelectedPerson) return;
+			if (!CanInteract) return;
 			if (IsMoving) return;
 
 			if (eventData.pointerEnter && !eventData.pointerEnter.Equals(SelectedPerson.gameObject))
@@ -88,8 +154,9 @@ namespace GamePlay
 			}
 			else if (eventData.pointerEnter)
 			{
-				if (CurrentSlot)
+				if (!CurrentSlot)
 				{
+					HideHighlight();
 					SelectedPerson = null;
 					return;
 				}

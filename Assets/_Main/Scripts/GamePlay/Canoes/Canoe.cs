@@ -14,7 +14,8 @@ namespace GamePlay.Canoes
 		[field: SerializeField, ReadOnly] public CanoeType CanoeType { get; private set; }
 		[field: SerializeField, ReadOnly] public Vector2 Size { get; private set; }
 
-		public ColorType ColorType { get; private set; }
+		[field: SerializeField, ReadOnly] public ColorType ColorType { get; private set; }
+		public bool IsCompleted { get; set; }
 
 		[Title("References")]
 		[SerializeField] private CanoeSlot[] canoeSlots;
@@ -37,7 +38,48 @@ namespace GamePlay.Canoes
 			{
 				var person = Instantiate(GameManager.Instance.PrefabsSO.PersonPrefab, canoeSlots[i].transform);
 				person.Setup(peopleColors[i], canoeSlots[i]);
-				canoeSlots[i].SetPerson(person);
+				canoeSlots[i].Setup(this);
+				canoeSlots[i].SetPerson(person, true);
+
+				canoeSlots[i].OnPersonSet += OnPersonSet;
+			}
+		}
+
+		private void OnPersonSet(CanoeSlot slot)
+		{
+			CheckIfCompleted();
+			if (IsCompleted)
+			{
+				SetInteractablePeople(false);
+			}
+
+			//TODO: wait animation to finish
+		}
+
+		public void Leave()
+		{
+			// 
+			OnLeave?.Invoke(this);
+			OnLeaveAny?.Invoke(this);
+		}
+
+		private void CheckIfCompleted()
+		{
+			for (int i = 0; i < canoeSlots.Length; i++)
+			{
+				if (canoeSlots[i].CurrentPerson.ColorType != ColorType)
+					return;
+			}
+
+			IsCompleted = true;
+		}
+
+		public void SetInteractablePeople(bool interactable)
+		{
+			for (int i = 0; i < canoeSlots.Length; i++)
+			{
+				if (canoeSlots[i].CurrentPerson)
+					canoeSlots[i].CurrentPerson.SetInteractable(interactable);
 			}
 		}
 
@@ -49,13 +91,6 @@ namespace GamePlay.Canoes
 				tempMats[0] = material;
 				renderers[i].materials = tempMats;
 			}
-		}
-
-		public void Leave()
-		{
-			// 
-			OnLeave?.Invoke(this);
-			OnLeaveAny?.Invoke(this);
 		}
 
 		public Tween Move(Vector3 position)

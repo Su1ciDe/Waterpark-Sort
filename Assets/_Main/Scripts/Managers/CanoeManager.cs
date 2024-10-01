@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using DG.Tweening;
 using Fiber.Managers;
 using Fiber.Utilities;
+using Fiber.Utilities.Extensions;
 using GamePlay.Canoes;
 using ScriptableObjects;
-using TriInspector;
 using UnityEngine;
 
 namespace Managers
@@ -13,7 +13,6 @@ namespace Managers
 	{
 		[SerializeField] private CanoeHolder[] holders;
 
-		[Title("Editor")]
 		private readonly Queue<Canoe> canoeQueue = new Queue<Canoe>();
 
 		private const float SPAWN_DELAY = .35f;
@@ -33,7 +32,7 @@ namespace Managers
 			Tween tween = null;
 			for (int i = 0; i < CanoeHolder.MAX_CANOES * 2; i++)
 			{
-				if (!canoeQueue.TryDequeue(out var canoe)) return;
+				if (!canoeQueue.TryDequeue(out var canoe)) break;
 
 				var holder = holders[i % 2];
 				if (holder.IsFull) continue;
@@ -75,7 +74,7 @@ namespace Managers
 				{
 					var canoe = holder.Canoes[j];
 					var pos = holder.transform.position - new Vector3(0, 0, size + canoe.Size.y / 2f);
-					if (!pos.Equals(canoe.transform.position))
+					if (pos.NotEquals(canoe.transform.position))
 					{
 						canoe.Move(pos);
 					}

@@ -1,10 +1,19 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GamePlay.Canoes
 {
 	public class CanoeSlot : MonoBehaviour
 	{
 		public Person CurrentPerson { get; private set; }
+		public Canoe Canoe { get; private set; }
+
+		public event UnityAction<CanoeSlot> OnPersonSet;
+
+		public void Setup(Canoe canoe)
+		{
+			Canoe = canoe;
+		}
 
 		public void SetPerson(Person person, bool setPosition = false)
 		{
@@ -14,6 +23,8 @@ namespace GamePlay.Canoes
 			// {
 			// 	setPosition
 			// }
+
+			OnPersonSet?.Invoke(this);
 		}
 
 		public void SetPersonPosition()

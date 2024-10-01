@@ -17,8 +17,9 @@ namespace Fiber.LevelSystem
 		{
 			LevelData = levelDataSO;
 			gameObject.SetActive(true);
-			
+
 			canoeManager.Setup(LevelData.SpawningCanoes);
+			holder.Setup(levelDataSO.PersonInTheHolder);
 		}
 
 		public virtual void Play()
