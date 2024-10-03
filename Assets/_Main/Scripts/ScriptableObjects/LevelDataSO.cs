@@ -36,17 +36,54 @@ namespace ScriptableObjects
 			var canoeColors = randomCanoeColors.Select(x => x.Color).ToList();
 			var canoeColorWeights = randomCanoeColors.Select(x => x.Weight).ToList();
 
+			var peopleColors = randomPeople.Select(x => x.Color).ToList();
+			var peopleColorWeights = randomPeople.Select(x => x.Weight).ToList();
+
 			for (int i = 0; i < randomCanoeCount; i++)
 			{
 				SpawningCanoes[i] = new CanoeEditor
 				{
 					CanoeType = canoeTypes.WeightedRandom(canoeTypeWeights), CanoeColor = canoeColors.WeightedRandom(canoeColorWeights), PeopleColors = new List<ColorType>()
 				};
+			}
+
+			var peopleCount = CalculateRandomPeopleColors();
+
+			for (int i = 0; i < randomCanoeCount; i++)
+			{
 				for (int j = 0; j < (int)SpawningCanoes[i].CanoeType; j++)
 				{
-					SpawningCanoes[i].PeopleColors.Add(canoeColors.WeightedRandom(canoeColorWeights));
+					var selectedColor = peopleColors.WeightedRandom(peopleColorWeights);
+					SpawningCanoes[i].PeopleColors.Add(selectedColor);
+
+					peopleCount[selectedColor]--;
+					if (peopleCount[selectedColor].Equals(0))
+					{
+						var index = peopleColors.IndexOf(selectedColor);
+						peopleColors.RemoveAt(index);
+						peopleColorWeights.RemoveAt(index);
+					}
 				}
 			}
+		}
+
+		private Dictionary<ColorType, int> CalculateRandomPeopleColors()
+		{
+			var randomPeopleColors = new Dictionary<ColorType, int>();
+			foreach (var spawningCanoe in SpawningCanoes)
+			{
+				if (!randomPeopleColors.TryAdd(spawningCanoe.CanoeColor, (int)spawningCanoe.CanoeType))
+				{
+					randomPeopleColors[spawningCanoe.CanoeColor] += (int)spawningCanoe.CanoeType;
+				}
+			}
+
+			foreach (var randomPeopleColor in randomPeopleColors)
+			{
+				Debug.Log(randomPeopleColor.ToString());
+			}
+
+			return randomPeopleColors;
 		}
 
 		private void CalculateCanoeTypesPercentages()
@@ -58,6 +95,7 @@ namespace ScriptableObjects
 			foreach (var canoeType in randomCanoeTypes)
 				canoeType.Percent = ((float)canoeType.Weight / totalWeight * 100).ToString("F2") + "%";
 		}
+
 		private void CalculateCanoeColorPercentages()
 		{
 			var totalWeight = 0;
@@ -67,6 +105,7 @@ namespace ScriptableObjects
 			foreach (var canoeType in randomCanoeColors)
 				canoeType.Percent = ((float)canoeType.Weight / totalWeight * 100).ToString("F2") + "%";
 		}
+
 		private void CalculateRandomPeoplePercentages()
 		{
 			var totalWeight = 0;

@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using DG.Tweening;
 using Fiber.Managers;
 using Fiber.Utilities;
-using Fiber.Utilities.Extensions;
 using GamePlay.Canoes;
 using ScriptableObjects;
 using UnityEngine;
@@ -68,20 +67,10 @@ namespace Managers
 		{
 			for (var i = 0; i < holders.Length; i++)
 			{
-				var holder = holders[i];
-				var size = 0f;
-				for (var j = 0; j < holder.Canoes.Count; j++)
-				{
-					var canoe = holder.Canoes[j];
-					var pos = holder.transform.position - new Vector3(0, 0, size + canoe.Size.y / 2f);
-					if (pos.NotEquals(canoe.transform.position))
-					{
-						canoe.Move(pos);
-					}
-
-					size += canoe.Size.y;
-				}
+				holders[i].Advance();
 			}
+
+			SpawnCanoes();
 		}
 
 		public void SpawnCanoes()
@@ -90,7 +79,7 @@ namespace Managers
 			{
 				var holder = holders[i];
 				var j = 0;
-				while (holder.IsFull)
+				while (!holder.IsFull)
 				{
 					if (!canoeQueue.TryDequeue(out var canoe)) return;
 
@@ -105,6 +94,20 @@ namespace Managers
 					j++;
 				}
 			}
+		}
+
+		public bool IsFirstCanoe(Canoe canoe)
+		{
+			for (int i = 0; i < holders.Length; i++)
+			{
+				if (holders[i].Canoes.Count <= 0) continue;
+				if (holders[i].Canoes[0].Equals(canoe))
+				{
+					return true;
+				}
+			}
+
+			return false;
 		}
 	}
 }

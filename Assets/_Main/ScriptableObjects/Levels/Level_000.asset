@@ -15,16 +15,37 @@ MonoBehaviour:
   MoveCount: 100
   PersonInTheHolder: 0
   SpawningCanoes:
-  - CanoeType: 6
+  - CanoeType: 4
     CanoeColor: 0
-    PeopleColors: 010000000100000000000000000000000100000000000000
+    PeopleColors: 00000000010000000100000001000000
+  - CanoeType: 6
+    CanoeColor: 1
+    PeopleColors: 000000000000000000000000000000000100000000000000
   - CanoeType: 4
     CanoeColor: 1
-    PeopleColors: 00000000010000000100000001000000
+    PeopleColors: 01000000000000000100000001000000
   - CanoeType: 4
+    CanoeColor: 1
+    PeopleColors: 01000000010000000100000001000000
+  - CanoeType: 6
     CanoeColor: 0
-    PeopleColors: 00000000010000000000000000000000
-  randomCanoeCount: 3
+    PeopleColors: 010000000000000000000000000000000100000000000000
+  - CanoeType: 6
+    CanoeColor: 1
+    PeopleColors: 000000000100000001000000010000000100000001000000
+  - CanoeType: 6
+    CanoeColor: 1
+    PeopleColors: 000000000000000000000000010000000100000001000000
+  - CanoeType: 6
+    CanoeColor: 0
+    PeopleColors: 010000000100000000000000010000000100000001000000
+  - CanoeType: 4
+    CanoeColor: 1
+    PeopleColors: 01000000010000000100000001000000
+  - CanoeType: 4
+    CanoeColor: 1
+    PeopleColors: 01000000010000000100000001000000
+  randomCanoeCount: 10
   randomCanoeTypes:
   - CanoeType: 4
     Weight: 1

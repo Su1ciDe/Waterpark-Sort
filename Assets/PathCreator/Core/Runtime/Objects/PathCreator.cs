@@ -78,7 +78,6 @@ namespace PathCreation {
             // (editor script is resposible for drawing when selected)
             var selectedObj = UnityEditor.Selection.activeGameObject;
             if (selectedObj == gameObject) return;
-            Debug.Log(path);
             if (path is null) return;
             
             path.UpdateTransform (transform);

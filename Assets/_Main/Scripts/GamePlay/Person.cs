@@ -79,7 +79,10 @@ namespace GamePlay
 			SetInteractable(false);
 			personInHolder.SetInteractable(true);
 
-			Jump();
+			Jump().onComplete+= () =>
+			{
+				
+			};
 			personInHolder.Jump().onComplete += () =>
 			{
 				Player.Player.Instance.CanInput = true;

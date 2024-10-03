@@ -1,6 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Fiber.Managers;
+using Managers;
+using PathCreation;
 using TriInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -51,9 +54,19 @@ namespace GamePlay.Canoes
 			if (IsCompleted)
 			{
 				SetInteractablePeople(false);
+				StartCoroutine(WaitCanoeLoading());
 			}
+		}
 
-			//TODO: wait animation to finish
+		private IEnumerator WaitCanoeLoading()
+		{
+			yield return new WaitUntil(() => !IsAnyPersonMoving());
+			yield return null;
+
+			if (IsInFirstLine())
+			{
+				Leave();
+			}
 		}
 
 		public void Leave()
@@ -93,14 +106,68 @@ namespace GamePlay.Canoes
 			}
 		}
 
-		public Tween Move(Vector3 position)
+		public Tween Move(Vector3 position, bool playStoppingMovement = true)
 		{
-			return transform.DOMove(position, speed).SetEase(Ease.OutSine).SetSpeedBased(true).SetEase(Ease.Linear).OnComplete(OnStoppedMoving);
+			SetInteractablePeople(false);
+			return transform.DOMove(position, speed).SetEase(Ease.OutSine).SetSpeedBased(true).SetEase(Ease.Linear).OnComplete(() =>
+			{
+				if (playStoppingMovement)
+					OnStoppedMoving();
+
+				SetInteractablePeople(!IsCompleted);
+			});
+		}
+
+		public void MoveCanoeToWaterfall(PathCreator pathCreator)
+		{
+			Move(pathCreator.transform.position, false).onComplete += () => { StartCoroutine(Waterfall(pathCreator.path)); };
+		}
+
+		private IEnumerator Waterfall(VertexPath path)
+		{
+			var dist = 0f;
+			var pos = transform.position;
+			var prevPos = Vector3.zero;
+			while (prevPos != pos)
+			{
+				if (path.GetClosestTimeOnPath(pos) >= 1f) break;
+
+				transform.position = pos;
+				transform.rotation = path.GetRotationAtDistance(dist, EndOfPathInstruction.Stop);
+				dist += speed * Time.deltaTime;
+
+				yield return null;
+
+				prevPos = pos;
+				pos = path.GetPointAtDistance(dist, EndOfPathInstruction.Stop);
+			}
+
+			transform.DOScale(0, 1f).OnComplete(() => Destroy(gameObject));
+
+			CanoeManager.Instance.AdvanceLines();
 		}
 
 		private void OnStoppedMoving()
 		{
-			model.DOLocalRotate(new Vector3(20f, 0, 0), 0.1f).SetEase(Ease.InOutSine).SetRelative().SetLoops(2, LoopType.Yoyo);
+			model.DOLocalRotate(new Vector3(10f, 0, 0), 0.15f).SetEase(Ease.InOutSine).SetRelative().SetLoops(2, LoopType.Yoyo);
+		}
+
+		public bool IsInFirstLine()
+		{
+			return CanoeManager.Instance.IsFirstCanoe(this);
+		}
+
+		public bool IsAnyPersonMoving()
+		{
+			for (int i = 0; i < canoeSlots.Length; i++)
+			{
+				if (canoeSlots[i].CurrentPerson && canoeSlots[i].CurrentPerson.IsMoving)
+				{
+					return true;
+				}
+			}
+
+			return false;
 		}
 	}
 }
