@@ -1,3 +1,4 @@
+using System.Collections;
 using Fiber.Managers;
 using GamePlay;
 using Managers;
@@ -34,10 +35,23 @@ namespace Fiber.LevelSystem
 			moveCount--;
 			OnMoveCountChanged?.Invoke(moveCount);
 
+			if (moveCount > 0) return;
+			
+			if (checkFailCoroutine is not null)
+				StopCoroutine(checkFailCoroutine);
+
+			checkFailCoroutine = StartCoroutine(CheckFail());
+		}
+
+		private Coroutine checkFailCoroutine = null;
+
+		private IEnumerator CheckFail()
+		{
+			yield return new WaitForSeconds(1);
 			if (moveCount <= 0)
-			{
 				LevelManager.Instance.Lose();
-			}
+
+			checkFailCoroutine = null;
 		}
 
 		public virtual void Load(LevelDataSO levelDataSO)

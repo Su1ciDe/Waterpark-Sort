@@ -73,14 +73,7 @@ namespace ScriptableObjects
 			foreach (var spawningCanoe in SpawningCanoes)
 			{
 				if (!randomPeopleColors.TryAdd(spawningCanoe.CanoeColor, (int)spawningCanoe.CanoeType))
-				{
 					randomPeopleColors[spawningCanoe.CanoeColor] += (int)spawningCanoe.CanoeType;
-				}
-			}
-
-			foreach (var randomPeopleColor in randomPeopleColors)
-			{
-				Debug.Log(randomPeopleColor.ToString());
 			}
 
 			return randomPeopleColors;

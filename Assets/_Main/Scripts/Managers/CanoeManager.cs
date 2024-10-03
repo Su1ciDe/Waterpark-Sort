@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Fiber.Managers;
@@ -19,11 +20,13 @@ namespace Managers
 		private void OnEnable()
 		{
 			LevelManager.OnLevelLoad += OnLevelLoaded;
+			Canoe.OnLeaveAny += OnCanoeLeft;
 		}
 
 		private void OnDisable()
 		{
 			LevelManager.OnLevelLoad -= OnLevelLoaded;
+			Canoe.OnLeaveAny -= OnCanoeLeft;
 		}
 
 		private void OnLevelLoaded()
@@ -94,6 +97,45 @@ namespace Managers
 					j++;
 				}
 			}
+		}
+
+		private void OnCanoeLeft(Canoe canoe)
+		{
+			if (checkWinCoroutine is not null)
+				StopCoroutine(checkWinCoroutine);
+
+			checkWinCoroutine = StartCoroutine(CheckWin());
+		}
+
+		private Coroutine checkWinCoroutine;
+
+		private IEnumerator CheckWin()
+		{
+			yield return new WaitForSeconds(0.5f);
+
+			var isFinished = false;
+			if (canoeQueue.Count.Equals(0))
+			{
+				for (int i = 0; i < holders.Length; i++)
+				{
+					if (holders[i].Canoes.Count.Equals(0))
+					{
+						isFinished = true;
+					}
+					else
+					{
+						isFinished = false;
+						break;
+					}
+				}
+
+				if (isFinished)
+				{
+					LevelManager.Instance.Win(LevelManager.Instance.CurrentLevel.TotalMoveCount);
+				}
+			}
+
+			checkWinCoroutine = null;
 		}
 
 		public bool IsFirstCanoe(Canoe canoe)
