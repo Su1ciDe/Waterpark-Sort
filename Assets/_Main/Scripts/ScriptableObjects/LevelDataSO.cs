@@ -14,8 +14,9 @@ namespace ScriptableObjects
 	public class LevelDataSO : ScriptableObject
 	{
 		public int MoveCount;
+		public int MaxHolderLength = 24;
 		public ColorType PersonInTheHolder = ColorType._0None;
-		[OnValueChanged(nameof(SetupEditor))]
+		[OnValueChanged(nameof(SetupEditor)), ListDrawerSettings(ShowElementLabels = true)]
 		public CanoeEditor[] SpawningCanoes;
 
 		#region Randomizer

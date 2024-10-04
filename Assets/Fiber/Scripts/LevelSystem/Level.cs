@@ -36,7 +36,7 @@ namespace Fiber.LevelSystem
 			OnMoveCountChanged?.Invoke(moveCount);
 
 			if (moveCount > 0) return;
-			
+
 			if (checkFailCoroutine is not null)
 				StopCoroutine(checkFailCoroutine);
 
@@ -60,7 +60,7 @@ namespace Fiber.LevelSystem
 			gameObject.SetActive(true);
 
 			moveCount = LevelData.MoveCount;
-			canoeManager.Setup(LevelData.SpawningCanoes);
+			canoeManager.Setup(LevelData.SpawningCanoes, LevelData.MaxHolderLength);
 			holder.Setup(levelDataSO.PersonInTheHolder);
 
 			OnMoveCountChanged?.Invoke(moveCount);

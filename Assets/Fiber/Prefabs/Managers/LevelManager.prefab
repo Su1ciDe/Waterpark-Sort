@@ -48,4 +48,5 @@ MonoBehaviour:
   levelPrefab: {fileID: 3210734524189124999, guid: 8f2be9d31462041a2bdb434ab6e22c7e, type: 3}
   Levels:
   - {fileID: 11400000, guid: 2c6cfdb9a610141cdaba90efb0514d90, type: 2}
+  - {fileID: 11400000, guid: 08eecddd1eba9460e953c9206ea04b46, type: 2}
   TutorialLevels: []

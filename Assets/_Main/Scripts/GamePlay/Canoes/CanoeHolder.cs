@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Fiber.Utilities.Extensions;
@@ -12,7 +11,9 @@ namespace GamePlay.Canoes
 	{
 		public bool IsAdvancing { get; set; }
 		public List<Canoe> Canoes { get; set; } = new List<Canoe>();
-		public bool IsFull => Canoes.Count >= MAX_CANOES;
+		public bool IsFull { get; set; }
+		public int CurrentLength { get; set; }
+		public int MaxLength { get; private set; }
 
 		[Title("References")]
 		[SerializeField] private PathCreator pathCreator;
@@ -20,7 +21,12 @@ namespace GamePlay.Canoes
 		[Title("Parameters")]
 		[SerializeField] private float spacing;
 
-		public const int MAX_CANOES = 3;
+		// public const int MAX_CANOES = 3;
+
+		public void Setup(int maxLength)
+		{
+			MaxLength = maxLength;
+		}
 
 		private void OnCanoeLeft(Canoe canoe)
 		{
@@ -33,6 +39,10 @@ namespace GamePlay.Canoes
 		public void SetCanoe(Canoe canoe)
 		{
 			Canoes.Add(canoe);
+			CurrentLength += canoe.Length;
+			
+			IsFull = CurrentLength >= MaxLength;
+			
 			canoe.OnLeave += OnCanoeLeft;
 		}
 

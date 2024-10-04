@@ -13,20 +13,21 @@ MonoBehaviour:
   m_Name: Level_001
   m_EditorClassIdentifier: 
   MoveCount: 100
+  MaxHolderLength: 12
   PersonInTheHolder: 0
   SpawningCanoes:
   - CanoeType: 4
     CanoeColor: 1
-    PeopleColors: 01000000000000000100000001000000
-  - CanoeType: 4
-    CanoeColor: 0
-    PeopleColors: 00000000010000000000000000000000
-  - CanoeType: 4
-    CanoeColor: 0
-    PeopleColors: 00000000000000000000000000000000
+    PeopleColors: 01000000000000000000000000000000
   - CanoeType: 6
     CanoeColor: 0
-    PeopleColors: 000000000000000000000000000000000000000000000000
+    PeopleColors: 010000000100000000000000000000000100000000000000
+  - CanoeType: 4
+    CanoeColor: 0
+    PeopleColors: 00000000010000000100000001000000
+  - CanoeType: 4
+    CanoeColor: 1
+    PeopleColors: 01000000000000000000000000000000
   randomCanoeCount: 4
   randomCanoeTypes:
   - CanoeType: 4

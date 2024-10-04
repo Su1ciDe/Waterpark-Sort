@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using Fiber.Managers;
 using Fiber.Utilities;
@@ -32,13 +33,19 @@ namespace Managers
 		private void OnLevelLoaded()
 		{
 			Tween tween = null;
-			for (int i = 0; i < CanoeHolder.MAX_CANOES * 2; i++)
+			int i = 0;
+			while (holders.Any(x => !x.IsFull))
 			{
-				if (!canoeQueue.TryDequeue(out var canoe)) break;
-
 				var holder = holders[i % 2];
-				if (holder.IsFull) continue;
+				if (canoeQueue.TryPeek(out var canoePeek))
+					if (holder.CurrentLength + canoePeek.Length >= holder.MaxLength)
+					{
+						i++;
+						holder.IsFull = true;
+						continue;
+					}
 
+				if (!canoeQueue.TryDequeue(out var canoe)) break;
 				canoe.transform.position = new Vector3(holder.transform.position.x, canoe.transform.position.y, canoe.transform.position.z);
 				canoe.gameObject.SetActive(true);
 
@@ -46,7 +53,24 @@ namespace Managers
 
 				tween = canoe.Move(holder.transform.position - new Vector3(0, 0, size + canoe.Size.y / 2f)).SetDelay(i * SPAWN_DELAY);
 				holder.SetCanoe(canoe);
+
+				i++;
 			}
+			// for (int i = 0; i < CanoeHolder.MAX_CANOES * 2; i++)
+			// {
+			// 	if (!canoeQueue.TryDequeue(out var canoe)) break;
+			//
+			// 	var holder = holders[i % 2];
+			// 	if (holder.IsFull) continue;
+			//
+			// 	canoe.transform.position = new Vector3(holder.transform.position.x, canoe.transform.position.y, canoe.transform.position.z);
+			// 	canoe.gameObject.SetActive(true);
+			//
+			// 	var size = holder.GetLength();
+			//
+			// 	tween = canoe.Move(holder.transform.position - new Vector3(0, 0, size + canoe.Size.y / 2f)).SetDelay(i * SPAWN_DELAY);
+			// 	holder.SetCanoe(canoe);
+			// }
 
 			if (tween is not null)
 			{
@@ -54,7 +78,7 @@ namespace Managers
 			}
 		}
 
-		public void Setup(LevelDataSO.CanoeEditor[] canoesEditor)
+		public void Setup(LevelDataSO.CanoeEditor[] canoesEditor, int holderMaxLength)
 		{
 			for (var i = 0; i < canoesEditor.Length; i++)
 			{
@@ -63,6 +87,11 @@ namespace Managers
 				canoe.Setup(canoeEditor.CanoeColor, canoeEditor.PeopleColors);
 				canoe.gameObject.SetActive(false);
 				canoeQueue.Enqueue(canoe);
+			}
+
+			for (int i = 0; i < holders.Length; i++)
+			{
+				holders[i].Setup(holderMaxLength);
 			}
 		}
 
@@ -84,6 +113,13 @@ namespace Managers
 				var j = 0;
 				while (!holder.IsFull)
 				{
+					if (canoeQueue.TryPeek(out var canoePeek))
+						if (holder.CurrentLength + canoePeek.Length >= holder.MaxLength)
+						{
+							holder.IsFull = true;
+							break;
+						}
+
 					if (!canoeQueue.TryDequeue(out var canoe)) return;
 
 					canoe.transform.position = new Vector3(holder.transform.position.x, canoe.transform.position.y, canoe.transform.position.z);

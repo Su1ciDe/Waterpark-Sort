@@ -16,6 +16,7 @@ namespace GamePlay.Canoes
 		[field: Title("Properties")]
 		[field: SerializeField, ReadOnly] public CanoeType CanoeType { get; private set; }
 		[field: SerializeField, ReadOnly] public Vector2 Size { get; private set; }
+		[field: SerializeField] public int Length { get; private set; }
 
 		[field: SerializeField, ReadOnly] public ColorType ColorType { get; private set; }
 		public bool IsCompleted { get; set; }
