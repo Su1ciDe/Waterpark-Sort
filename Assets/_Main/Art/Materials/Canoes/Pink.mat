@@ -16,6 +16,7 @@ Material:
   - TCP2_RIM_LIGHTING_LIGHTMASK
   - TCP2_SHADOW_LIGHT_COLOR
   - TCP2_SPECULAR
+  - _EMISSION
   m_InvalidKeywords:
   - TCP2_UV_NORMALS_FULL
   m_LightmapFlags: 4
@@ -41,11 +42,13 @@ Material:
     - _SpecularToonSize: 0.25
     - _SpecularToonSmoothness: 0.05
     - _SpecularType: 0
+    - _UseEmission: 1
     - _UseMobileMode: 0
     - _UseNormalMap: 0
     m_Colors:
     - _BaseColor: {r: 0.95095736, g: 0.5235849, b: 1, a: 1}
     - _Color: {r: 0.59257513, g: 0.59257513, b: 0.59257513, a: 1}
+    - _EmissionColor: {r: 0.4528302, g: 0.0064079626, b: 0.4249288, a: 1}
     - _HColor: {r: 1, g: 0.5990566, b: 0.9646465, a: 1}
     - _SColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
     - _SpecularColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}

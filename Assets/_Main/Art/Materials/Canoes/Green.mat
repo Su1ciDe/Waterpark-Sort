@@ -16,7 +16,7 @@ Material:
   - TCP2_RIM_LIGHTING_LIGHTMASK
   - TCP2_SHADOW_LIGHT_COLOR
   - TCP2_SPECULAR
-  - TCP2_SPECULAR_STYLIZED
+  - _EMISSION
   - _NORMALMAP
   m_InvalidKeywords:
   - TCP2_UV_NORMALS_FULL
@@ -32,12 +32,17 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _RampSmoothing: 0.397
-    - _RampThreshold: 0.871
-    - _SpecularToonSize: 0.505
+    - _RampSmoothing: 0.477
+    - _RampThreshold: 0.908
+    - _SpecularRoughness: 0.876
+    - _SpecularToonSize: 0.323
     - _SpecularToonSmoothness: 0.602
+    - _SpecularType: 0
+    - _UseEmission: 1
+    - _UseSpecular: 1
     m_Colors:
     - _BaseColor: {r: 0.070911966, g: 0.6132076, b: 0.043387324, a: 1}
+    - _EmissionColor: {r: 0, g: 0.2264151, b: 0.0038259435, a: 1}
     - _HColor: {r: 0.08177258, g: 0.7169812, b: 0, a: 1}
     - _SColor: {r: 0.008166101, g: 0.16981131, b: 0, a: 1}
     - _SpecularColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
