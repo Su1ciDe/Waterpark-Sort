@@ -34,8 +34,8 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Parallax: 0.02
-    - _RampSmoothing: 0.112
-    - _RampThreshold: 0.668
+    - _RampSmoothing: 0.453
+    - _RampThreshold: 0.55
     - _RimMin: 0
     - _SpecularRoughness: 0.85
     - _SpecularToonSize: 0.25
