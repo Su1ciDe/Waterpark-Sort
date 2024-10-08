@@ -7,18 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_bot_01
-    second: {fileID: 2100000, guid: ebe5a31b3e041a54c99eecd5c220bba1, type: 2}
+      name: Sm_bot_01
+    second: {fileID: 2100000, guid: c862176282c5c634984b6abe00f23211, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_bot_02
-    second: {fileID: 2100000, guid: 0011636b9a8fc9f4d87f972143650751, type: 2}
+      name: Sm_bot_02
+    second: {fileID: 2100000, guid: 30ee087a7f568ab4f95d0dff8fad0bde, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_bot_ip
-    second: {fileID: 2100000, guid: 22d4ce41c842e1e4d906dc6cf073192f, type: 2}
+      name: Sm_bot_03
+    second: {fileID: 2100000, guid: 44017ea2f87de604aa4dea22bc230984, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
