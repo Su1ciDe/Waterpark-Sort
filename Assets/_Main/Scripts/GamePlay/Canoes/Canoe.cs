@@ -17,7 +17,7 @@ namespace GamePlay.Canoes
 	{
 		[field: Title("Properties")]
 		[field: SerializeField, ReadOnly] public CanoeType CanoeType { get; private set; }
-		[field: SerializeField, ReadOnly] public Vector2 Size { get; private set; }
+		[field: SerializeField] public Vector2 Size { get; private set; }
 		[field: SerializeField] public int Length { get; private set; }
 		[field: SerializeField, ReadOnly] public ColorType ColorType { get; private set; }
 
@@ -41,7 +41,7 @@ namespace GamePlay.Canoes
 		{
 			ColorType = colorType;
 
-			ChangeMaterial(GameManager.Instance.ColorsSO.CanoeMaterials[ColorType]);
+			ChangeMaterial(GameManager.Instance.ColorsSO.CanoeMaterials[ColorType], GameManager.Instance.ColorsSO.CanoeSeatMaterials[ColorType]);
 
 			for (var i = 0; i < canoeSlots.Length; i++)
 			{
@@ -118,12 +118,13 @@ namespace GamePlay.Canoes
 			}
 		}
 
-		private void ChangeMaterial(Material material)
+		private void ChangeMaterial(Material mainMaterial, Material seatMaterial)
 		{
 			for (var i = 0; i < renderers.Length; i++)
 			{
 				var tempMats = renderers[i].materials;
-				tempMats[0] = material;
+				tempMats[0] = seatMaterial;
+				tempMats[1] = mainMaterial;
 				renderers[i].materials = tempMats;
 			}
 		}

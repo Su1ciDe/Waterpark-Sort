@@ -28,6 +28,22 @@ MonoBehaviour:
       Value: {fileID: 2100000, guid: f8627226eb9e14db892c46c9a23c3d2e, type: 2}
     - Key: 6
       Value: {fileID: 2100000, guid: b031072aaaf314971b674241538d825f, type: 2}
+  CanoeSeatMaterials:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 2100000, guid: 88a2fd265c4f1c845a1c2ab60f62c4e7, type: 2}
+    - Key: 1
+      Value: {fileID: 2100000, guid: ac882baf83625fe4c9f24e2be30cbfa7, type: 2}
+    - Key: 2
+      Value: {fileID: 2100000, guid: 6bd9ca0b91c8e0a4982968c0dd76e2bf, type: 2}
+    - Key: 3
+      Value: {fileID: 2100000, guid: 7e983009be4a3694e87493b8a262ffd3, type: 2}
+    - Key: 4
+      Value: {fileID: 2100000, guid: ec65cbf233d951e45ababd7ec3053bba, type: 2}
+    - Key: 5
+      Value: {fileID: 2100000, guid: 2d83bd921ef22ed458614ab4558b8970, type: 2}
+    - Key: 6
+      Value: {fileID: 2100000, guid: c6e80c9dac244754a83aa3aed73141c9, type: 2}
   PeopleMaterials:
     _serializedList:
     - Key: 0
