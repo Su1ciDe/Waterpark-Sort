@@ -69,10 +69,10 @@ namespace GamePlay.Canoes
 				if (pos.NotEquals(canoe.transform.position))
 				{
 					var tempTween = tween = canoe.Move(pos);
-					var j1 = j;
+					var _j = j;
 					tempTween.onComplete += () =>
 					{
-						if (j1.Equals(0) && canoe.IsCompleted)
+						if (_j.Equals(0) && canoe.IsCompleted)
 						{
 							canoe.Leave();
 						}

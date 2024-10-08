@@ -19,9 +19,9 @@ namespace GamePlay.Canoes
 		[field: SerializeField, ReadOnly] public CanoeType CanoeType { get; private set; }
 		[field: SerializeField, ReadOnly] public Vector2 Size { get; private set; }
 		[field: SerializeField] public int Length { get; private set; }
-
 		[field: SerializeField, ReadOnly] public ColorType ColorType { get; private set; }
-		public bool IsCompleted { get; set; }
+
+		public bool IsCompleted { get; private set; }
 
 		[Title("References")]
 		[SerializeField] private CanoeSlot[] canoeSlots;
@@ -30,6 +30,9 @@ namespace GamePlay.Canoes
 
 		[Title("Parameters")]
 		[SerializeField] private float speed = 10;
+
+		private CompletedUI completedUI;
+		private const string COMPLETED_POOL_TAG = "Completed";
 
 		public event UnityAction<Canoe> OnLeave;
 		public static event UnityAction<Canoe> OnLeaveAny;
@@ -42,17 +45,20 @@ namespace GamePlay.Canoes
 
 			for (var i = 0; i < canoeSlots.Length; i++)
 			{
-				var person = Instantiate(GameManager.Instance.PrefabsSO.PersonPrefab, canoeSlots[i].transform);
-				person.Setup(peopleColors[i], canoeSlots[i]);
-				canoeSlots[i].Setup(this);
-				canoeSlots[i].SetPerson(person, true);
+				var canoeSlot = canoeSlots[i];
+				var person = Instantiate(GameManager.Instance.PrefabsSO.PersonPrefab, canoeSlot.transform);
+				person.Setup(peopleColors[i], canoeSlot);
+				canoeSlot.Setup(this);
+				canoeSlot.SetPerson(person, true);
 
-				canoeSlots[i].OnPersonSet += OnPersonSet;
+				canoeSlot.OnPersonSet += OnPersonSet;
 			}
 		}
 
 		private void OnPersonSet(CanoeSlot slot)
 		{
+			if (IsCompleted) return;
+
 			CheckIfCompleted();
 			if (IsCompleted)
 			{
@@ -89,15 +95,18 @@ namespace GamePlay.Canoes
 			Complete();
 		}
 
-		private CompletedUI completedUI;
-		private const string COMPLETED_POOL_TAG = "Completed";
-
 		private void Complete()
 		{
 			IsCompleted = true;
 
-			completedUI = ObjectPooler.Instance.Spawn(COMPLETED_POOL_TAG, transform.position + 3 * Vector3.up).GetComponent<CompletedUI>();
+			completedUI = ObjectPooler.Instance.Spawn(COMPLETED_POOL_TAG, transform.position + 4 * Vector3.up).GetComponent<CompletedUI>();
 			completedUI.Spawn();
+
+			for (var i = 0; i < canoeSlots.Length; i++)
+			{
+				var person = canoeSlots[i].CurrentPerson;
+				person.transform.DOLocalMove(1 * Vector3.up, 0.2f).SetDelay(i * .15f).SetEase(Ease.OutSine).OnComplete(() => person.transform.DOLocalMove(Vector3.zero, .2f).SetEase(Ease.InSine));
+			}
 		}
 
 		public void SetInteractablePeople(bool interactable)

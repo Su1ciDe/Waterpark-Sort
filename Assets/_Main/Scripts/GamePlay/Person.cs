@@ -41,6 +41,11 @@ namespace GamePlay
 			LevelManager.OnLevelStart -= OnLevelStarted;
 		}
 
+		private void OnDestroy()
+		{
+			transform.DOKill();
+		}
+
 		private void OnLevelStarted()
 		{
 			if (CurrentSlot)
@@ -79,10 +84,7 @@ namespace GamePlay
 			SetInteractable(false);
 			personInHolder.SetInteractable(true);
 
-			Jump().onComplete+= () =>
-			{
-				
-			};
+			Jump().onComplete += () => { };
 			personInHolder.Jump().onComplete += () =>
 			{
 				Player.Player.Instance.CanInput = true;
