@@ -9,10 +9,11 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Pink
   m_Shader: {fileID: -6465566751694194690, guid: edd7abf643fa4bc4e8561d4c280c97cf, type: 3}
-  m_Parent: {fileID: 2100000, guid: 1bb6d6f2adf85431faea4167f1496ac0, type: 2}
+  m_Parent: {fileID: 2100000, guid: 6f2abb450184f3d4e925a9d89296db0b, type: 2}
   m_ModifiedSerializedProperties: 4
   m_ValidKeywords:
   - TCP2_REFLECTIONS_FRESNEL
+  - TCP2_RIM_LIGHTING
   - TCP2_RIM_LIGHTING_LIGHTMASK
   - TCP2_SHADOW_LIGHT_COLOR
   - TCP2_SPECULAR
@@ -34,19 +35,20 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Parallax: 0.02
-    - _RampSmoothing: 0.112
-    - _RampThreshold: 0.928
+    - _RampSmoothing: 0.236
+    - _RampThreshold: 0.819
     - _RimMin: 0
-    - _SpecularRoughness: 0.85
+    - _SpecularRoughness: 0.882
     - _SpecularToonSize: 0.25
     - _SpecularToonSmoothness: 0.05
     - _SpecularType: 0
     - _UseMobileMode: 0
     - _UseNormalMap: 0
+    - _UseRim: 1
     m_Colors:
-    - _BaseColor: {r: 0.95095736, g: 0.5235849, b: 1, a: 1}
+    - _BaseColor: {r: 0.8490566, g: 0.5727127, b: 0.7828897, a: 1}
     - _Color: {r: 0.59257513, g: 0.59257513, b: 0.59257513, a: 1}
-    - _HColor: {r: 1, g: 0.5990566, b: 0.9646465, a: 1}
-    - _SColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+    - _HColor: {r: 1, g: 0.5613208, b: 0.98670167, a: 1}
+    - _SColor: {r: 0.20754719, g: 0.03290382, b: 0, a: 1}
     - _SpecularColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
   m_BuildTextureStacks: []
