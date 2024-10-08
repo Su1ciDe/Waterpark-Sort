@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Waterfall_slide
+    second: {fileID: 2100000, guid: 312123704313bf943b1d9b746ffe86aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_river
     second: {fileID: 2100000, guid: 6cef566432e10e34d9b168d4d4ded848, type: 2}
   materials:
