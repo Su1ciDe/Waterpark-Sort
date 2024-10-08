@@ -1,6 +1,6 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using DG.Tweening;
 using Fiber.Managers;
 using Fiber.Utilities;
@@ -56,21 +56,6 @@ namespace Managers
 
 				i++;
 			}
-			// for (int i = 0; i < CanoeHolder.MAX_CANOES * 2; i++)
-			// {
-			// 	if (!canoeQueue.TryDequeue(out var canoe)) break;
-			//
-			// 	var holder = holders[i % 2];
-			// 	if (holder.IsFull) continue;
-			//
-			// 	canoe.transform.position = new Vector3(holder.transform.position.x, canoe.transform.position.y, canoe.transform.position.z);
-			// 	canoe.gameObject.SetActive(true);
-			//
-			// 	var size = holder.GetLength();
-			//
-			// 	tween = canoe.Move(holder.transform.position - new Vector3(0, 0, size + canoe.Size.y / 2f)).SetDelay(i * SPAWN_DELAY);
-			// 	holder.SetCanoe(canoe);
-			// }
 
 			if (tween is not null)
 			{
@@ -98,9 +83,7 @@ namespace Managers
 		public void AdvanceLines()
 		{
 			for (var i = 0; i < holders.Length; i++)
-			{
 				holders[i].Advance();
-			}
 
 			SpawnCanoes();
 		}

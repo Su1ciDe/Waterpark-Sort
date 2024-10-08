@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iphoneCam: {fileID: 887650352}
-  iphoneShadowDistance: 35
+  iphoneShadowDistance: 25
   ipadCam: {fileID: 0}
   ipadShadowDistance: 50
 --- !u!1001 &1767161694

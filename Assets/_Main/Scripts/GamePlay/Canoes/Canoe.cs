@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Fiber.Managers;
+using Fiber.Utilities;
 using Managers;
 using PathCreation;
 using TriInspector;
+using UI;
 using UnityEngine;
 using UnityEngine.Events;
 using Utilities;
@@ -72,7 +74,6 @@ namespace GamePlay.Canoes
 
 		public void Leave()
 		{
-			// 
 			OnLeave?.Invoke(this);
 			OnLeaveAny?.Invoke(this);
 		}
@@ -85,7 +86,18 @@ namespace GamePlay.Canoes
 					return;
 			}
 
+			Complete();
+		}
+
+		private CompletedUI completedUI;
+		private const string COMPLETED_POOL_TAG = "Completed";
+
+		private void Complete()
+		{
 			IsCompleted = true;
+
+			completedUI = ObjectPooler.Instance.Spawn(COMPLETED_POOL_TAG, transform.position + 3 * Vector3.up).GetComponent<CompletedUI>();
+			completedUI.Spawn();
 		}
 
 		public void SetInteractablePeople(bool interactable)
@@ -121,7 +133,12 @@ namespace GamePlay.Canoes
 
 		public void MoveCanoeToWaterfall(PathCreator pathCreator)
 		{
-			Move(pathCreator.transform.position, false).onComplete += () => { StartCoroutine(Waterfall(pathCreator.path)); };
+			Move(pathCreator.transform.position, false).onComplete += () =>
+			{
+				StartCoroutine(Waterfall(pathCreator.path));
+				if (completedUI)
+					ObjectPooler.Instance.Release(completedUI.gameObject, COMPLETED_POOL_TAG);
+			};
 		}
 
 		private IEnumerator Waterfall(VertexPath path)
