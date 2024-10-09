@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Fiber.Managers;
 using GamePlay.Canoes;
@@ -97,10 +98,11 @@ namespace GamePlay.People
 			SetInteractable(false);
 			personInHolder.SetInteractable(true);
 
+			animations.StandUp();
 			Jump().onComplete += OnJumpedToHolder;
 			personInHolder.Jump().onComplete += () =>
 			{
-				OnJumpedToCanoe();
+				personInHolder.OnJumpedToCanoe();
 
 				if (personInHolder.CurrentSlot.Canoe.IsCompleted)
 				{
@@ -116,7 +118,7 @@ namespace GamePlay.People
 			animations.Jump();
 
 			IsMoving = true;
-			return transform.DOLocalJump(Vector3.zero, jumpHeight, 1, jumpDuration).OnComplete(() => { IsMoving = false; });
+			return transform.DOLocalJump(Vector3.zero, jumpHeight, 1, jumpDuration).OnComplete(() => IsMoving = false);
 		}
 
 		public Tween JumpTo(Vector3 position)
@@ -137,8 +139,8 @@ namespace GamePlay.People
 
 		private void OnJumpedToHolder()
 		{
-			animations.StopJump();
 			animations.StandUp();
+			animations.StopJump();
 		}
 
 		public void SetInteractable(bool isInteractable)

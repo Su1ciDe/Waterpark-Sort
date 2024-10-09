@@ -20,10 +20,6 @@ namespace GamePlay.Canoes
 		{
 			CurrentPerson = person;
 			CurrentPerson.transform.SetParent(transform, !setPosition);
-			// if (setPosition)
-			// {
-			// 	setPosition
-			// }
 
 			OnPersonSet?.Invoke(this);
 		}
