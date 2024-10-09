@@ -10,50 +10,56 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce11574ed48049fea3bdfef3b65bd78c, type: 3}
-  m_Name: Level_002
+  m_Name: Level_004
   m_EditorClassIdentifier: 
   MoveCount: 100
   MaxHolderLength: 5
-  PersonInTheHolder: 0
+  PersonInTheHolder: 1
   SpawningCanoes:
   - CanoeType: 4
-    CanoeColor: 1
-    PeopleColors:
-    - PeopleColor: 1
-    - PeopleColor: 0
-    - PeopleColor: 0
-    - PeopleColor: 0
-  - CanoeType: 6
-    CanoeColor: 0
-    PeopleColors:
-    - PeopleColor: 1
-    - PeopleColor: 1
-    - PeopleColor: 0
-    - PeopleColor: 0
-    - PeopleColor: 1
-    - PeopleColor: 0
-  - CanoeType: 4
     CanoeColor: 0
     PeopleColors:
     - PeopleColor: 0
     - PeopleColor: 1
-    - PeopleColor: 1
-    - PeopleColor: 1
+    - PeopleColor: 0
+    - PeopleColor: 3
   - CanoeType: 4
     CanoeColor: 1
     PeopleColors:
+    - PeopleColor: 3
     - PeopleColor: 1
+    - PeopleColor: 2
+    - PeopleColor: 3
+  - CanoeType: 4
+    CanoeColor: 2
+    PeopleColors:
     - PeopleColor: 0
     - PeopleColor: 0
-    - PeopleColor: 0
+    - PeopleColor: 2
+    - PeopleColor: 3
+  - CanoeType: 4
+    CanoeColor: 3
+    PeopleColors:
+    - PeopleColor: 1
+    - PeopleColor: 1
+    - PeopleColor: 2
+    - PeopleColor: 2
   peopleCounts:
-  - ColorType: 1
-    NeededCount: 8
-    CurrentCount: 8
-    IsOk: "\u2714\uFE0E"
   - ColorType: 0
-    NeededCount: 10
-    CurrentCount: 10
+    NeededCount: 4
+    CurrentCount: 4
+    IsOk: "\u2714\uFE0E"
+  - ColorType: 1
+    NeededCount: 4
+    CurrentCount: 4
+    IsOk: "\u2714\uFE0E"
+  - ColorType: 2
+    NeededCount: 4
+    CurrentCount: 4
+    IsOk: "\u2714\uFE0E"
+  - ColorType: 3
+    NeededCount: 4
+    CurrentCount: 4
     IsOk: "\u2714\uFE0E"
   randomCanoeCount: 4
   randomCanoeTypes:

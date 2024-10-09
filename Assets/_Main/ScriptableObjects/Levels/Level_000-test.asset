@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce11574ed48049fea3bdfef3b65bd78c, type: 3}
-  m_Name: Level_000
+  m_Name: Level_000-test
   m_EditorClassIdentifier: 
   MoveCount: 100
   MaxHolderLength: 12
@@ -21,7 +21,7 @@ MonoBehaviour:
     PeopleColors: 01000000010000000000000001000000
   - CanoeType: 6
     CanoeColor: 0
-    PeopleColors: 010000000100000000000000000000000100000001000000
+    PeopleColors: 010000000000000000000000000000000000000000000000
   - CanoeType: 4
     CanoeColor: 0
     PeopleColors: 00000000010000000000000001000000
@@ -50,24 +50,24 @@ MonoBehaviour:
   randomCanoeTypes:
   - CanoeType: 4
     Weight: 1
-    Percent: 33.33%
+    Percent: 33,33%
   - CanoeType: 6
     Weight: 1
-    Percent: 33.33%
+    Percent: 33,33%
   - CanoeType: 8
     Weight: 1
-    Percent: 33.33%
+    Percent: 33,33%
   randomCanoeColors:
   - Color: 0
     Weight: 1
-    Percent: 50.00%
+    Percent: 50,00%
   - Color: 1
     Weight: 1
-    Percent: 50.00%
+    Percent: 50,00%
   randomPeople:
   - Color: 0
     Weight: 1
-    Percent: 50.00%
+    Percent: 50,00%
   - Color: 1
     Weight: 1
-    Percent: 50.00%
+    Percent: 50,00%
