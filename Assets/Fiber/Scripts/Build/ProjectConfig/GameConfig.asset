@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   companyName: Fiber Games
-  productName: Project-Template
+  productName: Waterpark Sort
   productIcon: {fileID: 2800000, guid: 0049bd813b4544af79cb4fe539f26a73, type: 3}
   version: 0.1
-  iOSBundleId: com.fibergames.game
+  iOSBundleId: com.FiberGames.WaterparkSort
   teamId: 9JRFGT2VDU
   iOSBuildNo: 0
   androidBundleId: com.fibergames.game
