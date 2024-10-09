@@ -8,7 +8,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using Utilities;
 
-namespace GamePlay
+namespace GamePlay.People
 {
 	public class Person : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 	{
@@ -26,10 +26,23 @@ namespace GamePlay
 		[SerializeField] private float jumpDuration = .5f;
 		[SerializeField] private float jumpHeight = 1;
 
+		private PersonAnimations animations;
+
 		private const float HIGHLIGHT_DURATION = .2f;
 		private const float HIGHLIGHT_SCALE = 1.2f;
 
 		public static event UnityAction<Person> OnPersonTapped;
+
+		private void Awake()
+		{
+			animations = GetComponentInChildren<PersonAnimations>();
+		}
+
+		private void Start()
+		{
+			if (CurrentSlot is not null)
+				animations.Sit();
+		}
 
 		private void OnEnable()
 		{
@@ -84,10 +97,9 @@ namespace GamePlay
 			SetInteractable(false);
 			personInHolder.SetInteractable(true);
 
-			Jump().onComplete += () => { };
+			Jump().onComplete += OnJumpedToHolder;
 			personInHolder.Jump().onComplete += () =>
 			{
-				Player.Player.Instance.CanInput = true;
 				OnJumpedToCanoe();
 
 				if (personInHolder.CurrentSlot.Canoe.IsCompleted)
@@ -101,18 +113,32 @@ namespace GamePlay
 
 		public Tween Jump()
 		{
+			animations.Jump();
+
 			IsMoving = true;
-			return transform.DOLocalJump(Vector3.zero, jumpHeight, 1, jumpDuration).OnComplete(() => IsMoving = false);
+			return transform.DOLocalJump(Vector3.zero, jumpHeight, 1, jumpDuration).OnComplete(() => { IsMoving = false; });
 		}
 
 		public Tween JumpTo(Vector3 position)
 		{
+			animations.Jump();
+
 			IsMoving = true;
 			return transform.DOJump(position, jumpHeight, 1, jumpDuration).OnComplete(() => IsMoving = false);
 		}
 
 		private void OnJumpedToCanoe()
 		{
+			Player.Player.Instance.CanInput = true;
+
+			animations.StopJump();
+			animations.Sit();
+		}
+
+		private void OnJumpedToHolder()
+		{
+			animations.StopJump();
+			animations.StandUp();
 		}
 
 		public void SetInteractable(bool isInteractable)

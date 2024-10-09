@@ -5,5 +5,8 @@ namespace Fiber.Animation
 	/// </summary>
 	public enum AnimationType
 	{
+		Sit,
+		SitSpeed,
+		Jump,
 	}
 }

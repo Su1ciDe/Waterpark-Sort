@@ -1,6 +1,7 @@
 using AYellowpaper.SerializedCollections;
 using GamePlay;
 using GamePlay.Canoes;
+using GamePlay.People;
 using UnityEngine;
 
 namespace ScriptableObjects

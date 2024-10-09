@@ -1,6 +1,7 @@
 using System.Collections;
 using Fiber.Managers;
 using GamePlay;
+using GamePlay.People;
 using Managers;
 using ScriptableObjects;
 using UnityEngine;
