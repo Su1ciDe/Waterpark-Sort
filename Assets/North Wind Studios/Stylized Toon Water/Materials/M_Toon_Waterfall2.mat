@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Toon_Waterfall
+  m_Name: M_Toon_Waterfall2
   m_Shader: {fileID: -6465566751694194690, guid: ebe69f5b87156e4469bd289a2dc72480, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -73,7 +73,7 @@ Material:
     - _Foam_Color: {r: 0.25, g: 1, b: 0.98726773, a: 0}
     - _Foam_Distortion_Scale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _Foam_Distortion_Speed: {r: 0, g: 0.1, b: 0, a: 0}
-    - _Foam_Scale: {r: 6, g: 6, b: 0, a: 0}
+    - _Foam_Scale: {r: 5, g: 5, b: 0, a: 0}
     - _Foam_Speed: {r: 0, g: 0.75, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6897249122569692841
