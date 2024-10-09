@@ -18,22 +18,69 @@ MonoBehaviour:
   SpawningCanoes:
   - CanoeType: 4
     CanoeColor: 0
-    PeopleColors: 03000000020000000100000000000000
+    PeopleColors:
+    - PeopleColor: 3
+    - PeopleColor: 2
+    - PeopleColor: 1
+    - PeopleColor: 0
   - CanoeType: 6
     CanoeColor: 2
-    PeopleColors: 000000000100000002000000020000000300000003000000
+    PeopleColors:
+    - PeopleColor: 0
+    - PeopleColor: 1
+    - PeopleColor: 2
+    - PeopleColor: 2
+    - PeopleColor: 3
+    - PeopleColor: 3
   - CanoeType: 6
     CanoeColor: 1
-    PeopleColors: 000000000000000003000000010000000100000001000000
+    PeopleColors:
+    - PeopleColor: 0
+    - PeopleColor: 0
+    - PeopleColor: 3
+    - PeopleColor: 1
+    - PeopleColor: 1
+    - PeopleColor: 1
   - CanoeType: 4
     CanoeColor: 3
-    PeopleColors: 00000000010000000200000003000000
+    PeopleColors:
+    - PeopleColor: 0
+    - PeopleColor: 1
+    - PeopleColor: 2
+    - PeopleColor: 3
   - CanoeType: 4
     CanoeColor: 2
-    PeopleColors: 02000000030000000200000003000000
+    PeopleColors:
+    - PeopleColor: 2
+    - PeopleColor: 3
+    - PeopleColor: 2
+    - PeopleColor: 3
   - CanoeType: 6
     CanoeColor: 3
-    PeopleColors: 030000000300000003000000020000000200000002000000
+    PeopleColors:
+    - PeopleColor: 3
+    - PeopleColor: 3
+    - PeopleColor: 3
+    - PeopleColor: 2
+    - PeopleColor: 2
+    - PeopleColor: 2
+  peopleCounts:
+  - ColorType: 0
+    NeededCount: 4
+    CurrentCount: 5
+    IsOk: "\u2716\uFE0E"
+  - ColorType: 2
+    NeededCount: 10
+    CurrentCount: 9
+    IsOk: "\u2716\uFE0E"
+  - ColorType: 1
+    NeededCount: 6
+    CurrentCount: 6
+    IsOk: "\u2714\uFE0E"
+  - ColorType: 3
+    NeededCount: 10
+    CurrentCount: 10
+    IsOk: "\u2714\uFE0E"
   randomCanoeCount: 4
   randomCanoeTypes:
   - CanoeType: 4

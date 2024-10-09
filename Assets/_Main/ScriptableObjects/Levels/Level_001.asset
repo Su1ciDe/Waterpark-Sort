@@ -18,10 +18,27 @@ MonoBehaviour:
   SpawningCanoes:
   - CanoeType: 4
     CanoeColor: 0
-    PeopleColors: 00000000000000000000000001000000
+    PeopleColors:
+    - PeopleColor: 0
+    - PeopleColor: 0
+    - PeopleColor: 0
+    - PeopleColor: 1
   - CanoeType: 4
     CanoeColor: 1
-    PeopleColors: 01000000010000000000000001000000
+    PeopleColors:
+    - PeopleColor: 1
+    - PeopleColor: 1
+    - PeopleColor: 0
+    - PeopleColor: 1
+  peopleCounts:
+  - ColorType: 0
+    NeededCount: 4
+    CurrentCount: 4
+    IsOk: "\u2714\uFE0E"
+  - ColorType: 1
+    NeededCount: 4
+    CurrentCount: 4
+    IsOk: "\u2714\uFE0E"
   randomCanoeCount: 4
   randomCanoeTypes:
   - CanoeType: 4

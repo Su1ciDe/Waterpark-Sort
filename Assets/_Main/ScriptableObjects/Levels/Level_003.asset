@@ -18,22 +18,95 @@ MonoBehaviour:
   SpawningCanoes:
   - CanoeType: 8
     CanoeColor: 4
-    PeopleColors: 0400000004000000040000000500000004000000040000000400000005000000
+    PeopleColors:
+    - PeopleColor: 4
+    - PeopleColor: 4
+    - PeopleColor: 4
+    - PeopleColor: 5
+    - PeopleColor: 4
+    - PeopleColor: 4
+    - PeopleColor: 4
+    - PeopleColor: 5
   - CanoeType: 8
     CanoeColor: 5
-    PeopleColors: 0500000005000000050000000400000005000000050000000500000004000000
+    PeopleColors:
+    - PeopleColor: 5
+    - PeopleColor: 5
+    - PeopleColor: 5
+    - PeopleColor: 4
+    - PeopleColor: 5
+    - PeopleColor: 5
+    - PeopleColor: 5
+    - PeopleColor: 4
   - CanoeType: 8
     CanoeColor: 0
-    PeopleColors: 0000000001000000010000000100000000000000000000000100000000000000
+    PeopleColors:
+    - PeopleColor: 0
+    - PeopleColor: 1
+    - PeopleColor: 1
+    - PeopleColor: 1
+    - PeopleColor: 0
+    - PeopleColor: 0
+    - PeopleColor: 1
+    - PeopleColor: 0
   - CanoeType: 8
     CanoeColor: 1
-    PeopleColors: 0100000000000000000000000000000001000000010000000000000001000000
+    PeopleColors:
+    - PeopleColor: 1
+    - PeopleColor: 0
+    - PeopleColor: 0
+    - PeopleColor: 0
+    - PeopleColor: 1
+    - PeopleColor: 1
+    - PeopleColor: 0
+    - PeopleColor: 1
   - CanoeType: 8
     CanoeColor: 2
-    PeopleColors: 0200000002000000020000000200000002000000020000000300000003000000
+    PeopleColors:
+    - PeopleColor: 2
+    - PeopleColor: 2
+    - PeopleColor: 2
+    - PeopleColor: 2
+    - PeopleColor: 2
+    - PeopleColor: 3
+    - PeopleColor: 3
+    - PeopleColor: 3
   - CanoeType: 8
     CanoeColor: 3
-    PeopleColors: 0300000003000000020000000300000003000000030000000200000003000000
+    PeopleColors:
+    - PeopleColor: 3
+    - PeopleColor: 3
+    - PeopleColor: 2
+    - PeopleColor: 3
+    - PeopleColor: 3
+    - PeopleColor: 2
+    - PeopleColor: 2
+    - PeopleColor: 3
+  peopleCounts:
+  - ColorType: 4
+    NeededCount: 8
+    CurrentCount: 8
+    IsOk: "\u2714\uFE0E"
+  - ColorType: 5
+    NeededCount: 8
+    CurrentCount: 8
+    IsOk: "\u2714\uFE0E"
+  - ColorType: 0
+    NeededCount: 8
+    CurrentCount: 8
+    IsOk: "\u2714\uFE0E"
+  - ColorType: 1
+    NeededCount: 8
+    CurrentCount: 8
+    IsOk: "\u2714\uFE0E"
+  - ColorType: 2
+    NeededCount: 8
+    CurrentCount: 8
+    IsOk: "\u2714\uFE0E"
+  - ColorType: 3
+    NeededCount: 8
+    CurrentCount: 8
+    IsOk: "\u2714\uFE0E"
   randomCanoeCount: 4
   randomCanoeTypes:
   - CanoeType: 4
