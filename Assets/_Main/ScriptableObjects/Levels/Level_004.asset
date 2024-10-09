@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce11574ed48049fea3bdfef3b65bd78c, type: 3}
+  m_Name: Level_004
+  m_EditorClassIdentifier: 
+  MoveCount: 40
+  MaxHolderLength: 5
+  PersonInTheHolder: 1
+  SpawningCanoes:
+  - CanoeType: 4
+    CanoeColor: 0
+    PeopleColors: 00000000010000000000000001000000
+  - CanoeType: 4
+    CanoeColor: 1
+    PeopleColors: 00000000010000000000000001000000
+  - CanoeType: 4
+    CanoeColor: 1
+    PeopleColors: 00000000000000000000000001000000
+  - CanoeType: 4
+    CanoeColor: 0
+    PeopleColors: 01000000010000000000000001000000
+  randomCanoeCount: 4
+  randomCanoeTypes:
+  - CanoeType: 4
+    Weight: 1
+    Percent: 50,00%
+  - CanoeType: 6
+    Weight: 1
+    Percent: 50,00%
+  randomCanoeColors:
+  - Color: 0
+    Weight: 1
+    Percent: 50,00%
+  - Color: 1
+    Weight: 1
+    Percent: 50,00%
+  randomPeople:
+  - Color: 0
+    Weight: 1
+    Percent: 50,00%
+  - Color: 1
+    Weight: 1
+    Percent: 50,00%
