@@ -5,6 +5,7 @@ using Fiber.Managers;
 using Fiber.Utilities;
 using Managers;
 using PathCreation;
+using ScriptableObjects;
 using TriInspector;
 using UI;
 using UnityEngine;
@@ -37,7 +38,7 @@ namespace GamePlay.Canoes
 		public event UnityAction<Canoe> OnLeave;
 		public static event UnityAction<Canoe> OnLeaveAny;
 
-		public void Setup(ColorType colorType, List<ColorType> peopleColors)
+		public void Setup(ColorType colorType, List<LevelDataSO.ColorTypeEditor> peopleColors)
 		{
 			ColorType = colorType;
 
@@ -47,7 +48,7 @@ namespace GamePlay.Canoes
 			{
 				var canoeSlot = canoeSlots[i];
 				var person = Instantiate(GameManager.Instance.PrefabsSO.PersonPrefab, canoeSlot.transform);
-				person.Setup(peopleColors[i], canoeSlot);
+				person.Setup(peopleColors[i].PeopleColor, canoeSlot);
 				canoeSlot.Setup(this);
 				canoeSlot.SetPerson(person, true);
 

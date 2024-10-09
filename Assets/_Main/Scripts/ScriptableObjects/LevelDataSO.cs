@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using Fiber.Utilities.Extensions;
 using GamePlay.Canoes;
 using TriInspector;
@@ -18,6 +19,8 @@ namespace ScriptableObjects
 		public ColorType PersonInTheHolder = ColorType._0None;
 		[OnValueChanged(nameof(SetupEditor)), ListDrawerSettings(ShowElementLabels = true)]
 		public CanoeEditor[] SpawningCanoes;
+
+		[SerializeField, ReadOnly] private List<PeopleCount> peopleCounts = new List<PeopleCount>();
 
 		#region Randomizer
 
@@ -44,7 +47,7 @@ namespace ScriptableObjects
 			{
 				SpawningCanoes[i] = new CanoeEditor
 				{
-					CanoeType = canoeTypes.WeightedRandom(canoeTypeWeights), CanoeColor = canoeColors.WeightedRandom(canoeColorWeights), PeopleColors = new List<ColorType>()
+					CanoeType = canoeTypes.WeightedRandom(canoeTypeWeights), CanoeColor = canoeColors.WeightedRandom(canoeColorWeights), PeopleColors = new List<ColorTypeEditor>()
 				};
 			}
 
@@ -55,7 +58,7 @@ namespace ScriptableObjects
 				for (int j = 0; j < (int)SpawningCanoes[i].CanoeType; j++)
 				{
 					var selectedColor = peopleColors.WeightedRandom(peopleColorWeights);
-					SpawningCanoes[i].PeopleColors.Add(selectedColor);
+					SpawningCanoes[i].PeopleColors.Add(new ColorTypeEditor(selectedColor));
 
 					peopleCount[selectedColor]--;
 					if (peopleCount[selectedColor].Equals(0))
@@ -112,9 +115,50 @@ namespace ScriptableObjects
 
 		#endregion
 
+		private void CalculatePeopleCount()
+		{
+			peopleCounts.Clear();
+
+			for (var i = 0; i < SpawningCanoes.Length; i++)
+			{
+				var canoe = SpawningCanoes[i];
+				var selectedEntry = peopleCounts.FirstOrDefault(x => x.ColorType == canoe.CanoeColor);
+				if (selectedEntry is not null)
+				{
+					selectedEntry.NeededCount += (int)canoe.CanoeType;
+				}
+				else
+				{
+					peopleCounts.Add(new PeopleCount { ColorType = canoe.CanoeColor, NeededCount = (int)canoe.CanoeType });
+				}
+			}
+
+			for (var i = 0; i < SpawningCanoes.Length; i++)
+			{
+				var canoe = SpawningCanoes[i];
+
+				for (int j = 0; j < canoe.PeopleColors.Count; j++)
+				{
+					var selectedEntry = peopleCounts.FirstOrDefault(x => x.ColorType == canoe.PeopleColors[j].PeopleColor);
+					if (selectedEntry is not null)
+					{
+						selectedEntry.CurrentCount++;
+					}
+				}
+			}
+
+			for (int i = 0; i < peopleCounts.Count; i++)
+			{
+				peopleCounts[i].IsOk = peopleCounts[i].NeededCount.Equals(peopleCounts[i].CurrentCount) ? "✔︎" : "✖︎";
+			}
+		}
+
 		private void OnValidate()
 		{
 			SetupEditor();
+
+			CalculatePeopleCount();
+
 			CalculateCanoeTypesPercentages();
 			CalculateCanoeColorPercentages();
 			CalculateRandomPeoplePercentages();
@@ -126,14 +170,14 @@ namespace ScriptableObjects
 			{
 				if (spawningCanoe.PeopleColors is null || spawningCanoe.PeopleColors.Count.Equals(0))
 				{
-					spawningCanoe.PeopleColors = new List<ColorType>((int)spawningCanoe.CanoeType);
+					spawningCanoe.PeopleColors = new List<ColorTypeEditor>((int)spawningCanoe.CanoeType);
 					for (int i = 0; i < (int)spawningCanoe.CanoeType; i++)
-						spawningCanoe.PeopleColors.Add(ColorType._0None);
+						spawningCanoe.PeopleColors.Add(new ColorTypeEditor(ColorType._0None));
 				}
 				else if (spawningCanoe.PeopleColors.Count < (int)spawningCanoe.CanoeType)
 				{
 					for (int i = spawningCanoe.PeopleColors.Count; i < (int)spawningCanoe.CanoeType; i++)
-						spawningCanoe.PeopleColors.Add(ColorType._0None);
+						spawningCanoe.PeopleColors.Add(new ColorTypeEditor(ColorType._0None));
 				}
 				else if (spawningCanoe.PeopleColors.Count > (int)spawningCanoe.CanoeType)
 				{
@@ -148,9 +192,88 @@ namespace ScriptableObjects
 		public class CanoeEditor
 		{
 			[Group("Canoe")] public CanoeType CanoeType;
-			[Group("Canoe")] public ColorType CanoeColor;
+			[Group("Canoe"), GUIColor("$GetColor")] public ColorType CanoeColor;
 			[ListDrawerSettings(HideAddButton = true, HideRemoveButton = true)]
-			[Group("Canoe")] public List<ColorType> PeopleColors;
+			[Group("Canoe")] public List<ColorTypeEditor> PeopleColors;
+
+			private Color GetColor
+			{
+				get
+				{
+					var color = CanoeColor switch
+					{
+						ColorType._0None => Color.white,
+						ColorType._1Blue => Color.blue,
+						ColorType._2Green => Color.green,
+						ColorType._3Orange => new Color(1f, 0.5f, 0),
+						ColorType._4Pink => Color.magenta,
+						ColorType._5Purple => new Color(.7f, .25f, 1f),
+						ColorType._6Red => Color.red,
+						ColorType._7Yellow => Color.yellow,
+						_ => throw new ArgumentOutOfRangeException()
+					};
+
+					return color;
+				}
+			}
+		}
+
+		[Serializable]
+		public class ColorTypeEditor
+		{
+			[GUIColor("$GetColor")] public ColorType PeopleColor;
+
+			public ColorTypeEditor(ColorType peopleColor)
+			{
+				PeopleColor = peopleColor;
+			}
+
+			private Color GetColor
+			{
+				get
+				{
+					var color = PeopleColor switch
+					{
+						ColorType._0None => Color.white,
+						ColorType._1Blue => Color.blue,
+						ColorType._2Green => Color.green,
+						ColorType._3Orange => new Color(1f, 0.5f, 0),
+						ColorType._4Pink => Color.magenta,
+						ColorType._5Purple => new Color(.7f, .25f, 1f),
+						ColorType._6Red => Color.red,
+						ColorType._7Yellow => Color.yellow,
+						_ => throw new ArgumentOutOfRangeException()
+					};
+
+					return color;
+				}
+			}
+		}
+
+		[DeclareHorizontalGroup("People")]
+		[Serializable]
+		private class PeopleCount
+		{
+			[Group("People")] public ColorType ColorType;
+			[Group("People")] public int NeededCount;
+			[Group("People")] public int CurrentCount;
+
+			[Group("People"), HideLabel, GUIColor("$GetColor")] public string IsOk;
+
+			private Color GetColor
+			{
+				get
+				{
+					var color = IsOk switch
+					{
+						"✖︎" => Color.red,
+						"✔︎" => Color.green,
+						_ => throw new ArgumentOutOfRangeException()
+					};
+
+					return color;
+				}
+			}
 		}
 
 		[DeclareHorizontalGroup("RandomCanoeType")]
