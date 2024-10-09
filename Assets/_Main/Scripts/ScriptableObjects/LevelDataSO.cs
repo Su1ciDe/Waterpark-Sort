@@ -254,7 +254,7 @@ namespace ScriptableObjects
 		[Serializable]
 		private class PeopleCount
 		{
-			[Group("People")] public ColorType ColorType;
+			[Group("People"), GUIColor("$GetPeopleColor")] public ColorType ColorType;
 			[Group("People")] public int NeededCount;
 			[Group("People")] public int CurrentCount;
 
@@ -268,6 +268,27 @@ namespace ScriptableObjects
 					{
 						"✖︎" => Color.red,
 						"✔︎" => Color.green,
+						_ => throw new ArgumentOutOfRangeException()
+					};
+
+					return color;
+				}
+			}
+
+			private Color GetPeopleColor
+			{
+				get
+				{
+					var color = ColorType switch
+					{
+						ColorType._0None => Color.white,
+						ColorType._1Blue => Color.blue,
+						ColorType._2Green => Color.green,
+						ColorType._3Orange => new Color(1f, 0.5f, 0),
+						ColorType._4Pink => Color.magenta,
+						ColorType._5Purple => new Color(.7f, .25f, 1f),
+						ColorType._6Red => Color.red,
+						ColorType._7Yellow => Color.yellow,
 						_ => throw new ArgumentOutOfRangeException()
 					};
 
