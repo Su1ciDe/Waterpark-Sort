@@ -21,8 +21,6 @@ namespace GamePlay.Canoes
 		[Title("Parameters")]
 		[SerializeField] private float spacing;
 
-		// public const int MAX_CANOES = 3;
-
 		public void Setup(int maxLength)
 		{
 			MaxLength = maxLength;
@@ -31,6 +29,10 @@ namespace GamePlay.Canoes
 		private void OnCanoeLeft(Canoe canoe)
 		{
 			canoe.OnLeave -= OnCanoeLeft;
+
+			CurrentLength -= canoe.Length;
+			CheckIfFull();	
+
 			Canoes.Remove(canoe);
 
 			canoe.MoveCanoeToWaterfall(pathCreator);
@@ -39,11 +41,16 @@ namespace GamePlay.Canoes
 		public void SetCanoe(Canoe canoe)
 		{
 			Canoes.Add(canoe);
+
 			CurrentLength += canoe.Length;
-			
-			IsFull = CurrentLength >= MaxLength;
-			
+			CheckIfFull();
+
 			canoe.OnLeave += OnCanoeLeft;
+		}
+
+		public void CheckIfFull()
+		{
+			IsFull = CurrentLength > MaxLength;
 		}
 
 		public float GetLength()

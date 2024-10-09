@@ -38,7 +38,7 @@ namespace Managers
 			{
 				var holder = holders[i % 2];
 				if (canoeQueue.TryPeek(out var canoePeek))
-					if (holder.CurrentLength + canoePeek.Length >= holder.MaxLength)
+					if (holder.CurrentLength + canoePeek.Length > holder.MaxLength)
 					{
 						i++;
 						holder.IsFull = true;
@@ -97,7 +97,7 @@ namespace Managers
 				while (!holder.IsFull)
 				{
 					if (canoeQueue.TryPeek(out var canoePeek))
-						if (holder.CurrentLength + canoePeek.Length >= holder.MaxLength)
+						if (holder.CurrentLength + canoePeek.Length > holder.MaxLength)
 						{
 							holder.IsFull = true;
 							break;
