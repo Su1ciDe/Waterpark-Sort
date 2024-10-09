@@ -154,6 +154,8 @@ namespace GamePlay.Canoes
 
 		private IEnumerator Waterfall(VertexPath path)
 		{
+			CanoeManager.Instance.AdvanceLines();
+
 			var dist = 0f;
 			var pos = transform.position;
 			var prevPos = Vector3.zero;
@@ -172,8 +174,6 @@ namespace GamePlay.Canoes
 			}
 
 			transform.DOScale(0, 1f).OnComplete(() => Destroy(gameObject));
-
-			CanoeManager.Instance.AdvanceLines();
 		}
 
 		private void OnStoppedMoving()
