@@ -10,51 +10,53 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce11574ed48049fea3bdfef3b65bd78c, type: 3}
-  m_Name: Level_002
+  m_Name: Level_002_1
   m_EditorClassIdentifier: 
   MoveCount: 100
   MaxHolderLength: 5
-  PersonInTheHolder: 0
+  PersonInTheHolder: 2
   SpawningCanoes:
   - CanoeType: 4
     CanoeColor: 1
     PeopleColors:
     - PeopleColor: 1
-    - PeopleColor: 0
-    - PeopleColor: 0
-    - PeopleColor: 0
-  - CanoeType: 6
-    CanoeColor: 0
-    PeopleColors:
     - PeopleColor: 1
-    - PeopleColor: 1
-    - PeopleColor: 0
-    - PeopleColor: 0
     - PeopleColor: 1
     - PeopleColor: 0
   - CanoeType: 4
     CanoeColor: 0
     PeopleColors:
     - PeopleColor: 0
+    - PeopleColor: 0
+    - PeopleColor: 0
     - PeopleColor: 1
-    - PeopleColor: 1
+  - CanoeType: 4
+    CanoeColor: 2
+    PeopleColors:
+    - PeopleColor: 2
+    - PeopleColor: 2
+    - PeopleColor: 2
     - PeopleColor: 1
   - CanoeType: 4
     CanoeColor: 1
     PeopleColors:
     - PeopleColor: 1
+    - PeopleColor: 1
     - PeopleColor: 0
-    - PeopleColor: 0
-    - PeopleColor: 0
+    - PeopleColor: 1
   peopleCounts:
   - ColorType: 1
     NeededCount: 8
     CurrentCount: 8
     IsOk: "\u2714\uFE0E"
   - ColorType: 0
-    NeededCount: 10
-    CurrentCount: 10
-    IsOk: "\u2714\uFE0E"
+    NeededCount: 4
+    CurrentCount: 5
+    IsOk: "\u2716\uFE0E"
+  - ColorType: 2
+    NeededCount: 4
+    CurrentCount: 3
+    IsOk: "\u2716\uFE0E"
   randomCanoeCount: 4
   randomCanoeTypes:
   - CanoeType: 4
