@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Fiber.AudioSystem;
 using Fiber.Managers;
 using GamePlay.Canoes;
 using Lofelt.NiceVibrations;
@@ -161,6 +162,7 @@ namespace GamePlay.People
 			OnPersonTapped?.Invoke(this);
 
 			HapticManager.Instance.PlayHaptic(HapticPatterns.PresetType.RigidImpact);
+			AudioManager.Instance.PlayAudio(AudioName.Plop1);
 		}
 
 		public void OnPointerDown(PointerEventData eventData)

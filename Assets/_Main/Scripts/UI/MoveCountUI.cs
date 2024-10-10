@@ -30,6 +30,8 @@ namespace UI
 
 			txtMoveCount.transform.DOComplete();
 			txtMoveCount.transform.DOPunchScale(.9f * Vector3.one, .2f, 2, .5f);
+
+			txtMoveCount.color = moveCount < 5 ? Color.red : Color.white;
 		}
 	}
 }
