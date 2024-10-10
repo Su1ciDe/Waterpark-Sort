@@ -24,6 +24,8 @@ namespace GamePlay.Canoes
 
 		public bool IsCompleted { get; private set; }
 
+		public CanoeSlot[] Slots => canoeSlots;
+
 		[Title("References")]
 		[SerializeField] private CanoeSlot[] canoeSlots;
 		[SerializeField] private Renderer[] renderers;
@@ -71,7 +73,7 @@ namespace GamePlay.Canoes
 		private IEnumerator WaitCanoeLoading()
 		{
 			yield return new WaitUntil(() => !IsAnyPersonMoving());
-			yield return null;
+			yield return new WaitForSeconds(0.5f);
 
 			if (IsInFirstLine())
 			{

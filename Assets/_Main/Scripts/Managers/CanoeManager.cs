@@ -13,6 +13,7 @@ namespace Managers
 	public class CanoeManager : Singleton<CanoeManager>
 	{
 		[SerializeField] private CanoeHolder[] holders;
+		public CanoeHolder[] Holders => holders;
 
 		private readonly Queue<Canoe> canoeQueue = new Queue<Canoe>();
 
