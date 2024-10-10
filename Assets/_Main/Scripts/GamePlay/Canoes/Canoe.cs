@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Fiber.AudioSystem;
 using Fiber.Managers;
 using Fiber.Utilities;
+using Lofelt.NiceVibrations;
 using Managers;
 using PathCreation;
 using ScriptableObjects;
@@ -23,6 +25,8 @@ namespace GamePlay.Canoes
 		[field: SerializeField, ReadOnly] public ColorType ColorType { get; private set; }
 
 		public bool IsCompleted { get; private set; }
+
+		public CanoeSlot[] Slots => canoeSlots;
 
 		[Title("References")]
 		[SerializeField] private CanoeSlot[] canoeSlots;
@@ -71,7 +75,7 @@ namespace GamePlay.Canoes
 		private IEnumerator WaitCanoeLoading()
 		{
 			yield return new WaitUntil(() => !IsAnyPersonMoving());
-			yield return null;
+			yield return new WaitForSeconds(0.5f);
 
 			if (IsInFirstLine())
 			{
@@ -98,6 +102,8 @@ namespace GamePlay.Canoes
 
 		private void Complete()
 		{
+			HapticManager.Instance.PlayHaptic(HapticPatterns.PresetType.Success);
+			
 			IsCompleted = true;
 
 			completedUI = ObjectPooler.Instance.Spawn(COMPLETED_POOL_TAG, transform.position + 4 * Vector3.up).GetComponent<CompletedUI>();
@@ -155,6 +161,8 @@ namespace GamePlay.Canoes
 		private IEnumerator Waterfall(VertexPath path)
 		{
 			CanoeManager.Instance.AdvanceLines();
+
+			AudioManager.Instance.PlayAudio(AudioName.Waterfall);
 
 			var dist = 0f;
 			var pos = transform.position;

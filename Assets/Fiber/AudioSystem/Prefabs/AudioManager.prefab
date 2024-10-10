@@ -63,11 +63,13 @@ MonoBehaviour:
       - Key: 7
         Value: {fileID: 8300000, guid: 7803083cd109e48de892af392f287b15, type: 3}
       - Key: 2
-        Value: {fileID: 8300000, guid: ea10cf5e8598c466bb5a51fa2a87321e, type: 3}
+        Value: {fileID: 8300000, guid: 42b8f6a08bda84b16b3f46829bca34df, type: 3}
       - Key: 3
         Value: {fileID: 8300000, guid: c4f6a36a176ec48ddbb93176b4ffe484, type: 3}
       - Key: 4
         Value: {fileID: 8300000, guid: e516ad2a2ea7946818d5845c0f828e3f, type: 3}
+      - Key: 8
+        Value: {fileID: 8300000, guid: 0763b029f732c4f0d9fb6b617b1a0a48, type: 3}
   - AudioSourcePrefab: {fileID: 5458974145386491207, guid: 9e1ed01cef9ce4a008f7d16af7973136, type: 3}
     ActiveAudioSource: {fileID: 0}
     CanPlayOver: 0

@@ -164,6 +164,7 @@ namespace Fiber.Managers
 			if (StateManager.Instance.CurrentState != GameState.OnStart) return;
 
 			AudioManager.Instance.PlayAudio(AudioName.LevelWin);
+			HapticManager.Instance.PlayHaptic(HapticPatterns.PresetType.Success);
 
 			OnLevelWinWithMoveCount?.Invoke(moveCount);
 		}
