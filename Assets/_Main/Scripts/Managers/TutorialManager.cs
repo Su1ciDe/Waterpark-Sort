@@ -158,6 +158,38 @@ namespace Managers
 
 			yield return new WaitForSeconds(0.5f);
 			Player.Instance.CanInput = false;
+
+			var person = CanoeManager.Instance.Holders[0].Canoes[1].Slots[3].CurrentPerson;
+			var personPos = person.transform.position;
+
+			tutorialUI.ShowTap(personPos, Helper.MainCamera);
+			tutorialUI.SetupFakeButton(() =>
+			{
+				person.OnTap();
+				StartCoroutine(Level2Tutorial_2());
+			}, personPos, Helper.MainCamera);
+		}
+
+		private IEnumerator Level2Tutorial_2()
+		{
+			tutorialUI.HideFocus();
+			tutorialUI.HideHand();
+			tutorialUI.HideText();
+			tutorialUI.HideFakeButton();
+
+			yield return new WaitForSeconds(0.5f);
+
+			var canoe = CanoeManager.Instance.Holders[0].Canoes[1];
+			tutorialUI.ShowText("A canoe can't advance if there's one in front of it!");
+			tutorialUI.ShowFocus(canoe.transform.position, Helper.MainCamera, false, 0, 1.5f);
+
+			yield return new WaitForSeconds(3);
+
+			tutorialUI.HideFocus();
+			tutorialUI.HideText();
+
+			Player.Instance.CanInput = true;
+			tutorialUI.SetBlocker(false);
 		}
 
 		#endregion
