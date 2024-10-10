@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce11574ed48049fea3bdfef3b65bd78c, type: 3}
   m_Name: Level_001
   m_EditorClassIdentifier: 
-  MoveCount: 100
+  MoveCount: 30
   MaxHolderLength: 4
   PersonInTheHolder: 0
   SpawningCanoes:
@@ -30,14 +30,28 @@ MonoBehaviour:
     - PeopleColor: 1
     - PeopleColor: 0
     - PeopleColor: 1
+  - CanoeType: 4
+    CanoeColor: 0
+    PeopleColors:
+    - PeopleColor: 0
+    - PeopleColor: 0
+    - PeopleColor: 0
+    - PeopleColor: 1
+  - CanoeType: 4
+    CanoeColor: 1
+    PeopleColors:
+    - PeopleColor: 1
+    - PeopleColor: 1
+    - PeopleColor: 0
+    - PeopleColor: 1
   peopleCounts:
   - ColorType: 0
-    NeededCount: 4
-    CurrentCount: 4
+    NeededCount: 8
+    CurrentCount: 8
     IsOk: "\u2714\uFE0E"
   - ColorType: 1
-    NeededCount: 4
-    CurrentCount: 4
+    NeededCount: 8
+    CurrentCount: 8
     IsOk: "\u2714\uFE0E"
   randomCanoeCount: 4
   randomCanoeTypes:
