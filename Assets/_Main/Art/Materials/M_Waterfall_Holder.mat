@@ -128,15 +128,15 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _bottomHalfRadius: 0.5
-    - _flowSpeedDirection: 0.44
+    - _flowSpeedDirection: 0.2
     - _flowVariation: 0.1
     - _radius: 0.014
     - _shineBottomHeight: 100
     - _shineConcentration: 82.8
-    - _shineDiminish: 3.5
-    - _shineFoamMiddle: 0.186
+    - _shineDiminish: 3.9
+    - _shineFoamMiddle: 0.198
     - _shineLength: 0.241
-    - _shineScale: 297
+    - _shineScale: 260
     - _shineVerticalOffset: 0.8
     - _upperHalfRadius: 0.5
     - _watergap: 0.1
