@@ -128,15 +128,15 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _bottomHalfRadius: 0.5
-    - _flowSpeedDirection: 0.5
+    - _flowSpeedDirection: 0.44
     - _flowVariation: 0.1
-    - _radius: 0.3
+    - _radius: 0.014
     - _shineBottomHeight: 100
-    - _shineConcentration: 50
+    - _shineConcentration: 82.8
     - _shineDiminish: 3.5
-    - _shineFoamMiddle: 0.127
-    - _shineLength: 0
-    - _shineScale: 250
+    - _shineFoamMiddle: 0.186
+    - _shineLength: 0.241
+    - _shineScale: 297
     - _shineVerticalOffset: 0.8
     - _upperHalfRadius: 0.5
     - _watergap: 0.1
@@ -152,10 +152,10 @@ Material:
     - innerFoamRadius: 0.3
     - radiusGradient: 0.3
     m_Colors:
-    - BaseColor: {r: 0, g: 0.31613123, b: 0.7490196, a: 0}
+    - BaseColor: {r: 0, g: 0, b: 0, a: 1}
     - _BaseColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
     - _Color: {r: 0.4, g: 0.4, b: 0.4, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _shineColor: {r: 0.5833334, g: 1, b: 0, a: 0}
+    - _shineColor: {r: 0.07643926, g: 0.060344227, b: 0.20306312, a: 0}
   m_BuildTextureStacks: []

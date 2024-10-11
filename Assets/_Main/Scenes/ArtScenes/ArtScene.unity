@@ -846,7 +846,7 @@ PrefabInstance:
     - target: {fileID: 882129737928793925, guid: 039c6e4d0e4d54a498102b595c43cc14, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ba17e8ce286924542a4dea6477401bc8, type: 2}
+      objectReference: {fileID: 2100000, guid: e6beaa7a086d5fc4fb34420c285c139b, type: 2}
     - target: {fileID: 919132149155446097, guid: 039c6e4d0e4d54a498102b595c43cc14, type: 3}
       propertyPath: m_Name
       value: Sm_Water
@@ -2459,18 +2459,6 @@ PrefabInstance:
     - target: {fileID: 6371357353640660265, guid: 2ea69cf2f12e741899ccd8e4e560761d, type: 3}
       propertyPath: m_Name
       value: Directional Light
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371357353640660267, guid: 2ea69cf2f12e741899ccd8e4e560761d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371357353640660267, guid: 2ea69cf2f12e741899ccd8e4e560761d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371357353640660267, guid: 2ea69cf2f12e741899ccd8e4e560761d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6371357353640660267, guid: 2ea69cf2f12e741899ccd8e4e560761d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

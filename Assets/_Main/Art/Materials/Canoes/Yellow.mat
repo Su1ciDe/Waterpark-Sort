@@ -46,7 +46,7 @@ Material:
     - _UseMobileMode: 0
     - _UseNormalMap: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.7415354, b: 0.11764705, a: 1}
+    - _BaseColor: {r: 0.8679245, g: 0.70820457, b: 0.3234247, a: 1}
     - _Color: {r: 0.59257513, g: 0.59257513, b: 0.59257513, a: 1}
     - _EmissionColor: {r: 0.028301895, g: 0.02436373, b: 0, a: 1}
     - _HColor: {r: 0.745283, g: 0.6242741, b: 0.10898005, a: 1}
