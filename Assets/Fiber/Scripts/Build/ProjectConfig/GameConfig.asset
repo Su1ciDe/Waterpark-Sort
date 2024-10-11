@@ -21,10 +21,10 @@ MonoBehaviour:
   iOSBuildNo: 0
   androidBundleId: com.fibergames.game
   androidBuildNo: 1
-  facebookId: 0
-  facebookClientToken: 
-  gameId: 
-  gameSecret: 
+  facebookId: 2293220527677086
+  facebookClientToken: 41b45757b1f5630df4d99ec2bcf05006
+  gameId: 62287bb572f5982dc5999a48326b0ed74a17af022620ebd9c4ce47aa654dc2b7
+  gameSecret: 9f2a1702e91e476786004259da9865d37b0557be653aa3715984fe3d23c1cf47
   background: {fileID: 0}
   loadingScreenLogo: {fileID: 0}
   loadingScreenTitle: {fileID: 0}
