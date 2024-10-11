@@ -152,7 +152,7 @@ Material:
     - _noiseScale: 250
     - _radius: 0
     - _shineBottomFoam: 0.25
-    - _shineBottomHeight: 4.6
+    - _shineBottomHeight: 54.8
     - _shineConcentration: 50
     - _shineDiminish: 4
     - _shineFoamMiddle: 0.363
@@ -164,17 +164,17 @@ Material:
     - _smoothness: 0.5
     - _upperHalfRadius: 0
     - _watergap: 0
-    - _waveDistortion: 0.003
+    - _waveDistortion: 0.00069
     - _waveEdgeSpeed: 1
-    - _waveEdgeThickness: 0.06
-    - _waveEdgeWobbleAmount: 10
-    - _waveEdgeWobbleDistance: 0.02
+    - _waveEdgeThickness: 0.093
+    - _waveEdgeWobbleAmount: 13.7
+    - _waveEdgeWobbleDistance: 0.0254
     - _waveEdgeWobbleSpeed: 1
     - _waveFrequency: 0
-    - _waveNoiseScale: 3.5
-    - _waveSpeed: 0.5
-    - _waveThickness: 15
-    - _waveVerticalStrength: 2
+    - _waveNoiseScale: 0
+    - _waveSpeed: -0.44
+    - _waveThickness: 1.5
+    - _waveVerticalStrength: 5
     - innerFoamRadius: 0.3
     - radiusGradient: 0.5
     - watergap: 0.27

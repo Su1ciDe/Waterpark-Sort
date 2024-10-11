@@ -43,16 +43,16 @@ Material:
     m_Floats:
     - _Animation_Intensity: 0.15
     - _Animation_Speed: 0.75
-    - _Foam_Max: 0.16
-    - _Foam_Min: 0.15
+    - _Foam_Max: 0
+    - _Foam_Min: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Foam_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Foam_Scale: {r: 1, g: 0.1, b: 0, a: 0}
-    - _Foam_Speed: {r: 0, g: 0.12, b: 0, a: 0}
-    - _Side_Foam_Scale: {r: 0.15, g: 0.15, b: 0, a: 0}
-    - _Side_Foam_Speed: {r: 0.04, g: 0.1, b: 0, a: 0}
+    - _Foam_Color: {r: 0.086908154, g: 0.7343343, b: 0.8773585, a: 0}
+    - _Foam_Scale: {r: 0, g: 0, b: 0, a: 0}
+    - _Foam_Speed: {r: 0, g: 0, b: 0, a: 0}
+    - _Side_Foam_Scale: {r: 0, g: 0, b: 0, a: 0}
+    - _Side_Foam_Speed: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7157294123539550168
 MonoBehaviour:
