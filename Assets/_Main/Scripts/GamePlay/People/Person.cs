@@ -101,6 +101,8 @@ namespace GamePlay.People
 
 			animations.StandUp();
 			Jump().onComplete += OnJumpedToHolder;
+			transform.DOScale(1.5f, jumpDuration);
+			personInHolder.transform.DOScale(1, jumpDuration);
 			personInHolder.Jump().onComplete += () =>
 			{
 				personInHolder.OnJumpedToCanoe();

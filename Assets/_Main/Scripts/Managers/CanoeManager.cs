@@ -17,7 +17,7 @@ namespace Managers
 
 		private readonly Queue<Canoe> canoeQueue = new Queue<Canoe>();
 
-		private const float SPAWN_DELAY = .35f;
+		private const float SPAWN_DELAY = .3f;
 
 		private void OnEnable()
 		{
@@ -33,7 +33,7 @@ namespace Managers
 
 		private void OnLevelLoaded()
 		{
-			Tween tween = null;
+			// Tween tween = null;
 			int i = 0;
 			while (holders.Any(x => !x.IsFull))
 			{
@@ -49,19 +49,21 @@ namespace Managers
 				if (!canoeQueue.TryDequeue(out var canoe)) break;
 				canoe.transform.position = new Vector3(holder.transform.position.x, canoe.transform.position.y, canoe.transform.position.z);
 				canoe.gameObject.SetActive(true);
+				canoe.SetInteractablePeople(false);
 
 				var size = holder.GetLength();
 
-				tween = canoe.Move(holder.transform.position - new Vector3(0, 0, size + canoe.Size.y / 2f)).SetDelay(i * SPAWN_DELAY);
+				canoe.Move(holder.transform.position - new Vector3(0, 0, size + canoe.Size.y / 2f)).SetDelay(i * SPAWN_DELAY).onComplete += () => canoe.SetInteractablePeople(true);
 				holder.SetCanoe(canoe);
 
 				i++;
 			}
 
-			if (tween is not null)
-			{
-				tween.onComplete += () => LevelManager.Instance.StartLevel();
-			}
+			// if (tween is not null)
+			// {
+			// 	tween.onComplete += () => LevelManager.Instance.StartLevel();
+			// }
+			LevelManager.Instance.StartLevel();
 		}
 
 		public void Setup(LevelDataSO.CanoeEditor[] canoesEditor, int holderMaxLength)
@@ -108,10 +110,11 @@ namespace Managers
 
 					canoe.transform.position = new Vector3(holder.transform.position.x, canoe.transform.position.y, canoe.transform.position.z);
 					canoe.gameObject.SetActive(true);
+					canoe.SetInteractablePeople(false);
 
 					var size = holder.GetLength();
 
-					canoe.Move(holder.transform.position - new Vector3(0, 0, size + canoe.Size.y / 2f)).SetDelay(j * SPAWN_DELAY);
+					canoe.Move(holder.transform.position - new Vector3(0, 0, size + canoe.Size.y / 2f)).SetDelay(j * SPAWN_DELAY).onComplete += () => canoe.SetInteractablePeople(true);
 					holder.SetCanoe(canoe);
 
 					j++;

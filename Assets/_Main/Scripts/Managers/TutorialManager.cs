@@ -86,7 +86,7 @@ namespace Managers
 			Player.Instance.CanInput = false;
 			tutorialUI.SetBlocker(true);
 
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(2);
 			Player.Instance.CanInput = false;
 
 			var person = CanoeManager.Instance.Holders[0].Canoes[0].Slots[3].CurrentPerson;
@@ -156,7 +156,7 @@ namespace Managers
 			Player.Instance.CanInput = false;
 			tutorialUI.SetBlocker(true);
 
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(2f);
 			Player.Instance.CanInput = false;
 
 			var person = CanoeManager.Instance.Holders[0].Canoes[1].Slots[3].CurrentPerson;

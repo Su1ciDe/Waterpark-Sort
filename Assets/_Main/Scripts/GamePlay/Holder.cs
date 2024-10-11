@@ -1,6 +1,7 @@
 using Fiber.Managers;
 using Fiber.Utilities;
 using GamePlay.People;
+using UnityEngine;
 using Utilities;
 
 namespace GamePlay
@@ -14,6 +15,7 @@ namespace GamePlay
 			var person = Instantiate(GameManager.Instance.PrefabsSO.PersonPrefab, transform);
 			person.Setup(personColor, null);
 			CurrentPerson = person;
+			person.transform.localScale = 1.5f * Vector3.one;
 		}
 
 		public void SetPerson(Person person)

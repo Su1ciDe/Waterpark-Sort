@@ -53,7 +53,7 @@ MonoBehaviour:
   canoeSlots: []
   renderers: []
   model: {fileID: 951839528943135599}
-  speed: 20
+  speed: 25
 --- !u!1 &9077162597115840071
 GameObject:
   m_ObjectHideFlags: 0
