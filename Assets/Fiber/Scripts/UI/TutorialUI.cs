@@ -13,6 +13,7 @@ namespace Fiber.UI
 		[Space]
 		[SerializeField] private Button fakeButton;
 		[Space]
+		[SerializeField] private Image messagePanel;
 		[SerializeField] private TMP_Text messageText;
 		[Space]
 		[SerializeField] private Image focus;
@@ -29,13 +30,13 @@ namespace Fiber.UI
 
 		private void Awake()
 		{
-			messagePosition = messageText.transform.position;
+			messagePosition = messagePanel.transform.position;
 		}
 
 		private void OnDestroy()
 		{
 			hand.DOKill();
-			messageText.rectTransform.DOKill();
+			messagePanel.rectTransform.DOKill();
 			focus.DOKill();
 		}
 
@@ -116,6 +117,7 @@ namespace Fiber.UI
 			messageText.DOComplete();
 			messageText.rectTransform.DOKill();
 			messageText.SetText(message);
+			messagePanel.gameObject.SetActive(true);
 			messageText.gameObject.SetActive(true);
 			if (isAnimated)
 			{
@@ -139,12 +141,12 @@ namespace Fiber.UI
 		public void HideText()
 		{
 			messageText.rectTransform.DOKill();
-			messageText.gameObject.SetActive(false);
+			messagePanel.gameObject.SetActive(false);
 
-			messageText.transform.position = messagePosition;
+			messagePanel.transform.position = messagePosition;
 		}
 
-		public bool IsShowingText => messageText.gameObject.activeSelf;
+		public bool IsShowingText => messagePanel.gameObject.activeSelf;
 
 		public void ShowFocus(Vector3 position, Camera cam = null, bool repeated = false, float delay = 0, float scale = 1)
 		{
@@ -196,7 +198,6 @@ namespace Fiber.UI
 		{
 			fakeButton.onClick.RemoveAllListeners();
 			fakeButton.gameObject.SetActive(false);
-			SetBlocker(false);
 		}
 
 		public void SetBlocker(bool block)
