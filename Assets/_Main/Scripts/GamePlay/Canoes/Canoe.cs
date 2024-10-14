@@ -103,10 +103,11 @@ namespace GamePlay.Canoes
 		private void Complete()
 		{
 			HapticManager.Instance.PlayHaptic(HapticPatterns.PresetType.Success);
-			
+
 			IsCompleted = true;
 
-			completedUI = ObjectPooler.Instance.Spawn(COMPLETED_POOL_TAG, transform.position + 4 * Vector3.up).GetComponent<CompletedUI>();
+			completedUI = ObjectPooler.Instance.Spawn(COMPLETED_POOL_TAG, transform.position + 4 * Vector3.up, transform).GetComponent<CompletedUI>();
+			completedUI.transform.LookAt(transform.position + Helper.MainCamera.transform.rotation * Vector3.forward, Helper.MainCamera.transform.rotation * Vector3.up);
 			completedUI.Spawn();
 
 			for (var i = 0; i < canoeSlots.Length; i++)

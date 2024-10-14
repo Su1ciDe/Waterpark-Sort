@@ -73,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 7952200400584948288}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.42, z: -0.8299999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96,7 +96,7 @@ MonoBehaviour:
       points:
       - {x: 0, y: 0, z: 0}
       - {x: 0, y: 0, z: 1}
-      - {x: -0.001953125, y: 0, z: 1.3163223}
+      - {x: 0.001953125, y: 0.0000013411045, z: 1.227457}
       - {x: 0, y: 0, z: 3.25}
       - {x: 0.0078125, y: 0.1534586, z: 5.642845}
       - {x: 0.00390625, y: -1.0366211, z: 5.829874}
@@ -127,7 +127,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 90
       flipNormals: 0
-    vertexPathUpToDate: 0
+    vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0
     showTransformTool: 1

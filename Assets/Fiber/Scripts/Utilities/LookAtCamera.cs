@@ -34,11 +34,17 @@ namespace Fiber.Utilities
 
 		private Camera mainCamera => Helper.MainCamera;
 
-		private void Awake()
+		private void Start()
 		{
 			if (TryGetComponent(out Canvas canvas))
 				canvas.worldCamera = mainCamera;
 
+			if (!updateEveryFrame)
+				Look();
+		}
+
+		private void OnEnable()
+		{
 			if (!updateEveryFrame)
 				Look();
 		}

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 4013791739117950562}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -645,6 +645,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3032764070499676619, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4645384751253450613, guid: 9ac9fc9fe73094c32b18651f8a737f53, type: 3}
       propertyPath: m_Name
       value: Canoe_8x
@@ -962,7 +966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 85b345386a5f49a4eb5f7aa3f2f3fa36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29848948
+      value: 0.04848948
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 85b345386a5f49a4eb5f7aa3f2f3fa36, type: 3}
       propertyPath: m_LocalPosition.z

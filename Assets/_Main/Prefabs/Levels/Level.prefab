@@ -100,10 +100,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5772685810015609396}
     m_Modifications:
-    - target: {fileID: 2437119350491485293, guid: af8a8eec2d93d4f269aa3e45945ded80, type: 3}
-      propertyPath: editorData.vertexPathUpToDate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5443737378198090116, guid: af8a8eec2d93d4f269aa3e45945ded80, type: 3}
       propertyPath: m_Name
       value: CanoeManager
