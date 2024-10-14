@@ -50,7 +50,7 @@ MonoBehaviour:
   - CanoeType: 6
     CanoeColor: 4
     PeopleColors:
-    - PeopleColor: 2
+    - PeopleColor: 4
     - PeopleColor: 1
     - PeopleColor: 0
     - PeopleColor: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
     CanoeColor: 1
     PeopleColors:
     - PeopleColor: 0
-    - PeopleColor: 0
+    - PeopleColor: 2
     - PeopleColor: 1
     - PeopleColor: 1
     - PeopleColor: 4
@@ -72,13 +72,13 @@ MonoBehaviour:
     - PeopleColor: 0
     - PeopleColor: 1
     - PeopleColor: 2
-    - PeopleColor: 4
+    - PeopleColor: 2
     - PeopleColor: 1
   - CanoeType: 4
     CanoeColor: 1
     PeopleColors:
     - PeopleColor: 6
-    - PeopleColor: 2
+    - PeopleColor: 4
     - PeopleColor: 1
     - PeopleColor: 1
   - CanoeType: 4
@@ -87,7 +87,7 @@ MonoBehaviour:
     - PeopleColor: 6
     - PeopleColor: 1
     - PeopleColor: 6
-    - PeopleColor: 4
+    - PeopleColor: 0
   peopleCounts:
   - ColorType: 2
     NeededCount: 14

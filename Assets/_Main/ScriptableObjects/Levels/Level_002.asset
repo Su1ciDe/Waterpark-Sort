@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveCount: 100
   MaxHolderLength: 5
-  PersonInTheHolder: 2
+  PersonInTheHolder: 5
   SpawningCanoes:
   - CanoeType: 4
     CanoeColor: 1
@@ -31,11 +31,11 @@ MonoBehaviour:
     - PeopleColor: 0
     - PeopleColor: 1
   - CanoeType: 4
-    CanoeColor: 2
+    CanoeColor: 5
     PeopleColors:
-    - PeopleColor: 2
-    - PeopleColor: 2
-    - PeopleColor: 2
+    - PeopleColor: 5
+    - PeopleColor: 5
+    - PeopleColor: 5
     - PeopleColor: 1
   - CanoeType: 4
     CanoeColor: 1
@@ -53,7 +53,7 @@ MonoBehaviour:
     NeededCount: 4
     CurrentCount: 5
     IsOk: "\u2716\uFE0E"
-  - ColorType: 2
+  - ColorType: 5
     NeededCount: 4
     CurrentCount: 3
     IsOk: "\u2716\uFE0E"

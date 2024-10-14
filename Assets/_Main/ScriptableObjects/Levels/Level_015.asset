@@ -17,19 +17,19 @@ MonoBehaviour:
   PersonInTheHolder: 3
   SpawningCanoes:
   - CanoeType: 4
-    CanoeColor: 2
+    CanoeColor: 4
     PeopleColors:
+    - PeopleColor: 6
+    - PeopleColor: 4
+    - PeopleColor: 3
     - PeopleColor: 5
-    - PeopleColor: 3
-    - PeopleColor: 2
-    - PeopleColor: 3
   - CanoeType: 6
     CanoeColor: 6
     PeopleColors:
     - PeopleColor: 6
     - PeopleColor: 4
     - PeopleColor: 3
-    - PeopleColor: 5
+    - PeopleColor: 3
     - PeopleColor: 6
     - PeopleColor: 6
   - CanoeType: 6
@@ -42,17 +42,17 @@ MonoBehaviour:
     - PeopleColor: 6
     - PeopleColor: 5
   - CanoeType: 4
-    CanoeColor: 4
+    CanoeColor: 2
     PeopleColors:
-    - PeopleColor: 6
+    - PeopleColor: 5
     - PeopleColor: 4
-    - PeopleColor: 3
+    - PeopleColor: 1
     - PeopleColor: 5
   - CanoeType: 6
     CanoeColor: 3
     PeopleColors:
-    - PeopleColor: 4
-    - PeopleColor: 1
+    - PeopleColor: 3
+    - PeopleColor: 2
     - PeopleColor: 3
     - PeopleColor: 3
     - PeopleColor: 2
@@ -99,14 +99,14 @@ MonoBehaviour:
     CanoeColor: 1
     PeopleColors:
     - PeopleColor: 0
-    - PeopleColor: 2
+    - PeopleColor: 3
     - PeopleColor: 1
     - PeopleColor: 1
   peopleCounts:
-  - ColorType: 2
-    NeededCount: 12
-    CurrentCount: 13
-    IsOk: "\u2716\uFE0E"
+  - ColorType: 4
+    NeededCount: 4
+    CurrentCount: 4
+    IsOk: "\u2714\uFE0E"
   - ColorType: 6
     NeededCount: 6
     CurrentCount: 6
@@ -115,14 +115,14 @@ MonoBehaviour:
     NeededCount: 6
     CurrentCount: 6
     IsOk: "\u2714\uFE0E"
-  - ColorType: 4
-    NeededCount: 4
-    CurrentCount: 4
+  - ColorType: 2
+    NeededCount: 12
+    CurrentCount: 12
     IsOk: "\u2714\uFE0E"
   - ColorType: 3
     NeededCount: 14
-    CurrentCount: 13
-    IsOk: "\u2716\uFE0E"
+    CurrentCount: 14
+    IsOk: "\u2714\uFE0E"
   - ColorType: 1
     NeededCount: 10
     CurrentCount: 10
