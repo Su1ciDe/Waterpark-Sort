@@ -100,7 +100,7 @@ MonoBehaviour:
     PeopleColors:
     - PeopleColor: 2
     - PeopleColor: 5
-    - PeopleColor: 6
+    - PeopleColor: 1
     - PeopleColor: 1
     - PeopleColor: 4
     - PeopleColor: 4
@@ -111,7 +111,7 @@ MonoBehaviour:
     PeopleColors:
     - PeopleColor: 6
     - PeopleColor: 4
-    - PeopleColor: 1
+    - PeopleColor: 6
     - PeopleColor: 2
   - CanoeType: 4
     CanoeColor: 2
