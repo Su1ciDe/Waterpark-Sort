@@ -12,22 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce11574ed48049fea3bdfef3b65bd78c, type: 3}
   m_Name: Level_015
   m_EditorClassIdentifier: 
-  MoveCount: 70
+  MoveCount: 100
   MaxHolderLength: 12
   PersonInTheHolder: 3
   SpawningCanoes:
   - CanoeType: 4
     CanoeColor: 2
     PeopleColors:
-    - PeopleColor: 3
-    - PeopleColor: 3
     - PeopleColor: 5
-    - PeopleColor: 6
+    - PeopleColor: 3
+    - PeopleColor: 2
+    - PeopleColor: 3
   - CanoeType: 6
     CanoeColor: 6
     PeopleColors:
     - PeopleColor: 6
-    - PeopleColor: 1
+    - PeopleColor: 4
     - PeopleColor: 3
     - PeopleColor: 5
     - PeopleColor: 6
@@ -38,24 +38,24 @@ MonoBehaviour:
     - PeopleColor: 4
     - PeopleColor: 5
     - PeopleColor: 5
-    - PeopleColor: 4
-    - PeopleColor: 4
+    - PeopleColor: 6
+    - PeopleColor: 6
     - PeopleColor: 5
   - CanoeType: 4
     CanoeColor: 4
     PeopleColors:
-    - PeopleColor: 2
+    - PeopleColor: 6
     - PeopleColor: 4
-    - PeopleColor: 1
+    - PeopleColor: 3
     - PeopleColor: 5
   - CanoeType: 6
     CanoeColor: 3
     PeopleColors:
-    - PeopleColor: 6
-    - PeopleColor: 6
+    - PeopleColor: 4
+    - PeopleColor: 1
     - PeopleColor: 3
     - PeopleColor: 3
-    - PeopleColor: 3
+    - PeopleColor: 2
     - PeopleColor: 1
   - CanoeType: 6
     CanoeColor: 1
@@ -63,13 +63,13 @@ MonoBehaviour:
     - PeopleColor: 1
     - PeopleColor: 2
     - PeopleColor: 2
-    - PeopleColor: 2
+    - PeopleColor: 3
     - PeopleColor: 1
     - PeopleColor: 1
   - CanoeType: 8
     CanoeColor: 3
     PeopleColors:
-    - PeopleColor: 3
+    - PeopleColor: 2
     - PeopleColor: 2
     - PeopleColor: 2
     - PeopleColor: 3
@@ -105,8 +105,8 @@ MonoBehaviour:
   peopleCounts:
   - ColorType: 2
     NeededCount: 12
-    CurrentCount: 12
-    IsOk: "\u2714\uFE0E"
+    CurrentCount: 13
+    IsOk: "\u2716\uFE0E"
   - ColorType: 6
     NeededCount: 6
     CurrentCount: 6
@@ -125,8 +125,8 @@ MonoBehaviour:
     IsOk: "\u2716\uFE0E"
   - ColorType: 1
     NeededCount: 10
-    CurrentCount: 11
-    IsOk: "\u2716\uFE0E"
+    CurrentCount: 10
+    IsOk: "\u2714\uFE0E"
   - ColorType: 0
     NeededCount: 4
     CurrentCount: 4

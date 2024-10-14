@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce11574ed48049fea3bdfef3b65bd78c, type: 3}
   m_Name: LevelAta_10
   m_EditorClassIdentifier: 
-  MoveCount: 40
+  MoveCount: 100
   MaxHolderLength: 6
   PersonInTheHolder: 0
   SpawningCanoes:
@@ -83,21 +83,21 @@ MonoBehaviour:
   randomCanoeTypes:
   - CanoeType: 4
     Weight: 1
-    Percent: 50.00%
+    Percent: 50,00%
   - CanoeType: 6
     Weight: 1
-    Percent: 50.00%
+    Percent: 50,00%
   randomCanoeColors:
   - Color: 0
     Weight: 1
-    Percent: 50.00%
+    Percent: 50,00%
   - Color: 1
     Weight: 1
-    Percent: 50.00%
+    Percent: 50,00%
   randomPeople:
   - Color: 0
     Weight: 1
-    Percent: 50.00%
+    Percent: 50,00%
   - Color: 1
     Weight: 1
-    Percent: 50.00%
+    Percent: 50,00%
