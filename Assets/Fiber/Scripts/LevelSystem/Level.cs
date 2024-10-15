@@ -17,7 +17,7 @@ namespace Fiber.LevelSystem
 		[SerializeField] private Holder holder;
 		[SerializeField] private CanoeManager canoeManager;
 
-		private int moveCount = 0;
+		private int moveCount;
 
 		public static event UnityAction<int> OnMoveCountChanged;
 
@@ -60,9 +60,9 @@ namespace Fiber.LevelSystem
 			LevelData = levelDataSO;
 			gameObject.SetActive(true);
 
-			moveCount = LevelData.MoveCount;
 			canoeManager.Setup(LevelData.SpawningCanoes, LevelData.MaxHolderLength);
 			holder.Setup(levelDataSO.PersonInTheHolder);
+			moveCount = LevelData.MoveCount;
 
 			OnMoveCountChanged?.Invoke(moveCount);
 		}
