@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce11574ed48049fea3bdfef3b65bd78c, type: 3}
   m_Name: Level_020
   m_EditorClassIdentifier: 
-  MoveCount: 70
+  MoveCount: 100
   MaxHolderLength: 12
   PersonInTheHolder: 3
   SpawningCanoes:

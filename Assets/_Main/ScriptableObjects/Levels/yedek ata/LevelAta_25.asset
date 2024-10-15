@@ -10,26 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce11574ed48049fea3bdfef3b65bd78c, type: 3}
-  m_Name: LevelAta_21
+  m_Name: LevelAta_25
   m_EditorClassIdentifier: 
   MoveCount: 100
   MaxHolderLength: 12
-  PersonInTheHolder: 3
+  PersonInTheHolder: 4
   SpawningCanoes:
-  - CanoeType: 4
-    CanoeColor: 2
-    PeopleColors:
-    - PeopleColor: 2
-    - PeopleColor: 2
-    - PeopleColor: 5
-    - PeopleColor: 5
-  - CanoeType: 4
-    CanoeColor: 5
-    PeopleColors:
-    - PeopleColor: 5
-    - PeopleColor: 5
-    - PeopleColor: 2
-    - PeopleColor: 2
   - CanoeType: 8
     CanoeColor: 4
     PeopleColors:
@@ -37,8 +23,8 @@ MonoBehaviour:
     - PeopleColor: 0
     - PeopleColor: 4
     - PeopleColor: 3
-    - PeopleColor: 5
-    - PeopleColor: 2
+    - PeopleColor: 1
+    - PeopleColor: 4
     - PeopleColor: 4
     - PeopleColor: 4
   - CanoeType: 8
@@ -47,11 +33,25 @@ MonoBehaviour:
     - PeopleColor: 1
     - PeopleColor: 3
     - PeopleColor: 1
-    - PeopleColor: 2
+    - PeopleColor: 1
     - PeopleColor: 4
     - PeopleColor: 4
     - PeopleColor: 6
-    - PeopleColor: 2
+    - PeopleColor: 4
+  - CanoeType: 4
+    CanoeColor: 6
+    PeopleColors:
+    - PeopleColor: 1
+    - PeopleColor: 6
+    - PeopleColor: 1
+    - PeopleColor: 3
+  - CanoeType: 4
+    CanoeColor: 3
+    PeopleColors:
+    - PeopleColor: 3
+    - PeopleColor: 0
+    - PeopleColor: 6
+    - PeopleColor: 6
   - CanoeType: 8
     CanoeColor: 6
     PeopleColors:
@@ -63,29 +63,11 @@ MonoBehaviour:
     - PeopleColor: 0
     - PeopleColor: 6
     - PeopleColor: 6
-  - CanoeType: 6
-    CanoeColor: 0
-    PeopleColors:
-    - PeopleColor: 1
-    - PeopleColor: 4
-    - PeopleColor: 2
-    - PeopleColor: 6
-    - PeopleColor: 0
-    - PeopleColor: 5
-  - CanoeType: 6
-    CanoeColor: 2
-    PeopleColors:
-    - PeopleColor: 0
-    - PeopleColor: 1
-    - PeopleColor: 3
-    - PeopleColor: 2
-    - PeopleColor: 2
-    - PeopleColor: 5
   - CanoeType: 8
     CanoeColor: 5
     PeopleColors:
     - PeopleColor: 0
-    - PeopleColor: 1
+    - PeopleColor: 0
     - PeopleColor: 6
     - PeopleColor: 4
     - PeopleColor: 5
@@ -93,59 +75,69 @@ MonoBehaviour:
     - PeopleColor: 6
     - PeopleColor: 6
   - CanoeType: 6
+    CanoeColor: 4
+    PeopleColors:
+    - PeopleColor: 0
+    - PeopleColor: 1
+    - PeopleColor: 3
+    - PeopleColor: 4
+    - PeopleColor: 4
+    - PeopleColor: 5
+  - CanoeType: 6
+    CanoeColor: 0
+    PeopleColors:
+    - PeopleColor: 1
+    - PeopleColor: 4
+    - PeopleColor: 4
+    - PeopleColor: 1
+    - PeopleColor: 0
+    - PeopleColor: 5
+  - CanoeType: 6
     CanoeColor: 0
     PeopleColors:
     - PeopleColor: 0
     - PeopleColor: 5
-    - PeopleColor: 3
-    - PeopleColor: 1
+    - PeopleColor: 6
+    - PeopleColor: 4
     - PeopleColor: 0
     - PeopleColor: 3
   - CanoeType: 6
     CanoeColor: 3
     PeopleColors:
     - PeopleColor: 0
-    - PeopleColor: 0
     - PeopleColor: 1
+    - PeopleColor: 5
+    - PeopleColor: 0
     - PeopleColor: 3
     - PeopleColor: 3
-    - PeopleColor: 3
-  - CanoeType: 4
-    CanoeColor: 6
+  - CanoeType: 6
+    CanoeColor: 1
     PeopleColors:
-    - PeopleColor: 0
-    - PeopleColor: 6
+    - PeopleColor: 5
+    - PeopleColor: 5
     - PeopleColor: 0
     - PeopleColor: 3
-  - CanoeType: 4
-    CanoeColor: 3
+    - PeopleColor: 5
+    - PeopleColor: 1
+  - CanoeType: 6
+    CanoeColor: 5
     PeopleColors:
     - PeopleColor: 3
-    - PeopleColor: 0
-    - PeopleColor: 6
-    - PeopleColor: 6
+    - PeopleColor: 1
+    - PeopleColor: 5
+    - PeopleColor: 5
+    - PeopleColor: 5
+    - PeopleColor: 1
   peopleCounts:
-  - ColorType: 2
-    NeededCount: 10
-    CurrentCount: 10
-    IsOk: "\u2714\uFE0E"
-  - ColorType: 5
-    NeededCount: 12
-    CurrentCount: 12
-    IsOk: "\u2714\uFE0E"
   - ColorType: 4
-    NeededCount: 8
-    CurrentCount: 8
+    NeededCount: 14
+    CurrentCount: 14
     IsOk: "\u2714\uFE0E"
   - ColorType: 1
-    NeededCount: 8
-    CurrentCount: 8
+    NeededCount: 14
+    CurrentCount: 14
     IsOk: "\u2714\uFE0E"
   - ColorType: 6
-    NeededCount: 12
-    CurrentCount: 12
-    IsOk: "\u2714\uFE0E"
-  - ColorType: 0
     NeededCount: 12
     CurrentCount: 12
     IsOk: "\u2714\uFE0E"
@@ -153,25 +145,33 @@ MonoBehaviour:
     NeededCount: 10
     CurrentCount: 10
     IsOk: "\u2714\uFE0E"
+  - ColorType: 5
+    NeededCount: 14
+    CurrentCount: 14
+    IsOk: "\u2714\uFE0E"
+  - ColorType: 0
+    NeededCount: 12
+    CurrentCount: 12
+    IsOk: "\u2714\uFE0E"
   randomCanoeCount: 4
   randomCanoeTypes:
   - CanoeType: 4
     Weight: 1
-    Percent: 50,00%
+    Percent: 50.00%
   - CanoeType: 6
     Weight: 1
-    Percent: 50,00%
+    Percent: 50.00%
   randomCanoeColors:
   - Color: 0
     Weight: 1
-    Percent: 50,00%
+    Percent: 50.00%
   - Color: 1
     Weight: 1
-    Percent: 50,00%
+    Percent: 50.00%
   randomPeople:
   - Color: 0
     Weight: 1
-    Percent: 50,00%
+    Percent: 50.00%
   - Color: 1
     Weight: 1
-    Percent: 50,00%
+    Percent: 50.00%
