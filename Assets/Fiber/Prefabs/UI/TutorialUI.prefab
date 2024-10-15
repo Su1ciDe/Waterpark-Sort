@@ -292,15 +292,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Tutorial Message Tutorial Message Tutorial Message '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 47ea98304d3d015499190b83eeeaf197, type: 2}
-  m_sharedMaterial: {fileID: 3747962371219854942, guid: 47ea98304d3d015499190b83eeeaf197, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ad8bfea14378b05488cae3a79b3ac342, type: 2}
+  m_sharedMaterial: {fileID: 3747962371219854942, guid: ad8bfea14378b05488cae3a79b3ac342, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4292120430
+  m_fontColor: {r: 0.43137255, g: 0.56078434, b: 0.83137256, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
