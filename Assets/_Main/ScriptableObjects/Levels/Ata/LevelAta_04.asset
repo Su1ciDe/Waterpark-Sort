@@ -13,10 +13,24 @@ MonoBehaviour:
   m_Name: LevelAta_04
   m_EditorClassIdentifier: 
   MoveCount: 100
-  MaxHolderLength: 10
+  MaxHolderLength: 12
   PersonInTheHolder: 5
   SpawningCanoes:
   - CanoeType: 4
+    CanoeColor: 0
+    PeopleColors:
+    - PeopleColor: 0
+    - PeopleColor: 0
+    - PeopleColor: 1
+    - PeopleColor: 1
+  - CanoeType: 4
+    CanoeColor: 1
+    PeopleColors:
+    - PeopleColor: 1
+    - PeopleColor: 1
+    - PeopleColor: 0
+    - PeopleColor: 0
+  - CanoeType: 4
     CanoeColor: 5
     PeopleColors:
     - PeopleColor: 5
@@ -33,37 +47,9 @@ MonoBehaviour:
   - CanoeType: 4
     CanoeColor: 1
     PeopleColors:
-    - PeopleColor: 0
-    - PeopleColor: 1
-    - PeopleColor: 1
-    - PeopleColor: 1
-  - CanoeType: 4
-    CanoeColor: 1
-    PeopleColors:
-    - PeopleColor: 0
-    - PeopleColor: 0
-    - PeopleColor: 1
-    - PeopleColor: 1
-  - CanoeType: 4
-    CanoeColor: 5
-    PeopleColors:
-    - PeopleColor: 5
-    - PeopleColor: 5
-    - PeopleColor: 5
-    - PeopleColor: 1
-  - CanoeType: 4
-    CanoeColor: 1
-    PeopleColors:
     - PeopleColor: 5
     - PeopleColor: 1
     - PeopleColor: 1
-    - PeopleColor: 1
-  - CanoeType: 4
-    CanoeColor: 0
-    PeopleColors:
-    - PeopleColor: 0
-    - PeopleColor: 5
-    - PeopleColor: 5
     - PeopleColor: 0
   - CanoeType: 4
     CanoeColor: 5
@@ -72,40 +58,19 @@ MonoBehaviour:
     - PeopleColor: 5
     - PeopleColor: 5
     - PeopleColor: 1
-  - CanoeType: 4
-    CanoeColor: 5
-    PeopleColors:
-    - PeopleColor: 5
-    - PeopleColor: 5
-    - PeopleColor: 5
-    - PeopleColor: 1
-  - CanoeType: 4
-    CanoeColor: 1
-    PeopleColors:
-    - PeopleColor: 0
-    - PeopleColor: 1
-    - PeopleColor: 1
-    - PeopleColor: 1
-  - CanoeType: 4
-    CanoeColor: 0
-    PeopleColors:
-    - PeopleColor: 0
-    - PeopleColor: 5
-    - PeopleColor: 0
-    - PeopleColor: 0
   peopleCounts:
-  - ColorType: 5
-    NeededCount: 16
-    CurrentCount: 16
-    IsOk: "\u2714\uFE0E"
   - ColorType: 0
-    NeededCount: 12
-    CurrentCount: 12
+    NeededCount: 8
+    CurrentCount: 8
     IsOk: "\u2714\uFE0E"
   - ColorType: 1
-    NeededCount: 16
-    CurrentCount: 16
-    IsOk: "\u2714\uFE0E"
+    NeededCount: 8
+    CurrentCount: 9
+    IsOk: "\u2716\uFE0E"
+  - ColorType: 5
+    NeededCount: 8
+    CurrentCount: 7
+    IsOk: "\u2716\uFE0E"
   randomCanoeCount: 4
   randomCanoeTypes:
   - CanoeType: 4

@@ -44,28 +44,14 @@ MonoBehaviour:
     - PeopleColor: 1
     - PeopleColor: 1
     - PeopleColor: 5
-  - CanoeType: 4
-    CanoeColor: 5
-    PeopleColors:
-    - PeopleColor: 5
-    - PeopleColor: 1
-    - PeopleColor: 5
-    - PeopleColor: 1
-  - CanoeType: 4
-    CanoeColor: 1
-    PeopleColors:
-    - PeopleColor: 5
-    - PeopleColor: 1
-    - PeopleColor: 5
-    - PeopleColor: 1
   peopleCounts:
   - ColorType: 5
-    NeededCount: 12
-    CurrentCount: 12
+    NeededCount: 8
+    CurrentCount: 8
     IsOk: "\u2714\uFE0E"
   - ColorType: 1
-    NeededCount: 12
-    CurrentCount: 12
+    NeededCount: 8
+    CurrentCount: 8
     IsOk: "\u2714\uFE0E"
   randomCanoeCount: 4
   randomCanoeTypes:
