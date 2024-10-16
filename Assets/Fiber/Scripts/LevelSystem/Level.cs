@@ -48,7 +48,7 @@ namespace Fiber.LevelSystem
 
 		private IEnumerator CheckFail()
 		{
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(1.5f);
 			if (moveCount <= 0)
 				LevelManager.Instance.Lose();
 
