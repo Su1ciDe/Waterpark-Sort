@@ -2,6 +2,7 @@ using System.Collections;
 using Fiber.Managers;
 using GamePlay;
 using GamePlay.People;
+using GamePlay.Player;
 using Managers;
 using ScriptableObjects;
 using UnityEngine;
@@ -37,7 +38,7 @@ namespace Fiber.LevelSystem
 			OnMoveCountChanged?.Invoke(moveCount);
 
 			if (moveCount > 0) return;
-
+			Player.Instance.CanInput = false;
 			if (checkFailCoroutine is not null)
 				StopCoroutine(checkFailCoroutine);
 
