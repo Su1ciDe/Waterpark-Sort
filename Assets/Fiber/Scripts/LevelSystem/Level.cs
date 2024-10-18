@@ -19,6 +19,7 @@ namespace Fiber.LevelSystem
 		[SerializeField] private CanoeManager canoeManager;
 
 		private int moveCount;
+		public int MoveCount => moveCount;
 
 		public static event UnityAction<int> OnMoveCountChanged;
 
@@ -37,12 +38,14 @@ namespace Fiber.LevelSystem
 			moveCount--;
 			OnMoveCountChanged?.Invoke(moveCount);
 
-			if (moveCount > 0) return;
-			Player.Instance.CanInput = false;
-			if (checkFailCoroutine is not null)
-				StopCoroutine(checkFailCoroutine);
+			if (moveCount.Equals(0))
+			{
+				Player.Instance.CanInput = false;
+				if (checkFailCoroutine is not null)
+					StopCoroutine(checkFailCoroutine);
 
-			checkFailCoroutine = StartCoroutine(CheckFail());
+				checkFailCoroutine = StartCoroutine(CheckFail());
+			}
 		}
 
 		private Coroutine checkFailCoroutine = null;

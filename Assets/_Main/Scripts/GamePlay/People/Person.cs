@@ -138,12 +138,14 @@ namespace GamePlay.People
 
 			animations.StopJump();
 			animations.Sit();
+			SetInteractable(true);
 		}
 
 		private void OnJumpedToHolder()
 		{
 			animations.StandUp();
 			animations.StopJump();
+			SetInteractable(false);
 		}
 
 		public void SetInteractable(bool isInteractable)
@@ -169,6 +171,7 @@ namespace GamePlay.People
 
 		public void OnPointerDown(PointerEventData eventData)
 		{
+			if (LevelManager.Instance.CurrentLevel.MoveCount <= 0) return;
 			if (!Player.Player.Instance.CanInput) return;
 			if (!CanInteract) return;
 			if (IsMoving) return;
@@ -180,6 +183,7 @@ namespace GamePlay.People
 
 		public void OnPointerUp(PointerEventData eventData)
 		{
+			if (LevelManager.Instance.CurrentLevel.MoveCount <= 0) return;
 			if (!Player.Player.Instance.CanInput) return;
 			if (!SelectedPerson) return;
 			if (!CanInteract) return;
